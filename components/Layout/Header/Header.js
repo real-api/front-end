@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './Header.module.css';
 import Image from 'next/image';
 
@@ -16,10 +17,16 @@ const Header = () => {
         </div>
         <div className={styles.listContainer}>
           <ul>
-            <li>Home</li>
-            <li>Docs</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/docs">Docs</Link>
+            </li>
             <li>GitHub</li>
-            <li>Buy me a coffe</li>
+            <li>
+              <Link href="/donation">Buy me a coffe</Link>
+            </li>
           </ul>
         </div>
       </div>
