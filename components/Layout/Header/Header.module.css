@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.headerContainer {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.logoContainer {
+}
+
+.logoContainer img {
+  border-radius: 5px;
+}
+
+.listContainer ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.listContainer ul li {
+  margin: 0 20px;
+  color: #6e6e6e;
+  transition: all 0.2s ease;
+}
+
+.listContainer ul li:hover {
+  color: rgb(56, 56, 56);
+  cursor: pointer;
+}
