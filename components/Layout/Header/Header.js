@@ -1,36 +1,49 @@
 import React from 'react';
-import Link from 'next/link';
-import styles from './Header.module.css';
 import Image from 'next/image';
+import Burger from './Burger';
+import styled from 'styled-components';
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  img {
+    border-radius: 5px;
+  }
+`;
+
+const ContentContainer = styled.div`
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 30px;
+  }
+`;
 
 const Header = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.headerContainer}>
-        <div className={styles.logoContainer}>
-          <Image
-            src="/assets/images/Logo.png"
-            alt="picture of website logo"
-            width="50"
-            height="50"
-          />
-        </div>
-        <div className={styles.listContainer}>
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/docs">Docs</Link>
-            </li>
-            <li>GitHub</li>
-            <li>
-              <Link href="/donation">Buy me a coffe</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <HeaderContainer>
+      <ContentContainer>
+        <Image
+          src="/assets/images/Logo.png"
+          alt="picture of website logo"
+          width="50"
+          height="50"
+        />
+        <Burger />
+      </ContentContainer>
+    </HeaderContainer>
   );
 };
 
