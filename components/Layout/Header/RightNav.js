@@ -7,6 +7,7 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   margin: 0;
+  z-index: 15;
   li {
     padding: 18px 30px;
     color: #6e6e6e;

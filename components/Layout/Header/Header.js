@@ -8,10 +8,6 @@ const HeaderContainer = styled.div`
   justify-content: center;
   width: 100%;
   position: relative;
-
-  img {
-    border-radius: 5px;
-  }
 `;
 
 const ContentContainer = styled.div`
@@ -27,7 +23,7 @@ const ContentContainer = styled.div`
     padding-right: 100px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     padding-left: 30px;
   }
 `;
@@ -39,7 +35,7 @@ const Header = () => {
         <Image
           src="/assets/images/Logo.png"
           alt="picture of website logo"
-          width="50"
+          width="45"
           height="50"
         />
         <Burger />
