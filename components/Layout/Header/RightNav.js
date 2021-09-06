@@ -13,12 +13,12 @@ const Ul = styled.ul`
     transition: all 0.2s ease;
 
     &:hover {
-      color: #2e2e2e;
+      color: #1565df;
     }
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0d2538;
+    background-color: #1565d6;
     position: fixed;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     top: 0;
@@ -29,6 +29,10 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
     li {
       color: #fff;
+
+      &:hover {
+        color: #fff
+      }
     }
   }
 `;
