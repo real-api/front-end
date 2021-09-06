@@ -7,6 +7,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  position: relative;
 
   img {
     border-radius: 5px;
