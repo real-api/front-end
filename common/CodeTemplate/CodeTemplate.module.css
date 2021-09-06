@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.highlight {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  border-radius: 5px;
+  padding: 20px 30px;
+}
+
+.header {
+  color: #1565df;
+  font-size: 1.8rem;
+}
+
+.container button {
+  width: fit-content;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 10px 30px;
+  border: none;
+  margin: 20px 0;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #1565df;
+}
+
+.container button:hover {
+  transform: scale(1.05);
+}
+
+.container button:focus {
+  outline: none;
+}

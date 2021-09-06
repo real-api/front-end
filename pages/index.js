@@ -4,7 +4,12 @@ import Link from 'next/link';
 
 import styles from './HomePage.module.css';
 
+import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
+
 export default function Home() {
+  const text = `fetch('https://fakestoreapi.com/products/1')
+  .then(res=>res.json())
+  .then(json=>console.log(json))`;
   return (
     <main className={styles.mainContainer}>
       <Head>
@@ -12,47 +17,60 @@ export default function Home() {
         <meta name="description" content="A real api" />
         <link rel="icon" href="/assets/images/Logo.png" />
       </Head>
-
-      <section className={styles.container}>
-        <div className={styles.textContainer}>
-          <h1>ME API</h1>
-          <p>
-            {' '}
-            Fake store rest API for your e-commerce or shopping website
-            prototype
-          </p>
-          <div className={styles.btns}>
-            <Link href="/docs">
-              <a className={styles.docsAnchor}>
-                Read Docs
-                <Image
-                  height="20"
-                  width="20"
-                  src="/assets/images/book.svg"
-                  alt="book"
-                />
-              </a>
-            </Link>
-            <a className={styles.githubAnchor}>
-              View on GitHub
-              <Image
-                height="20"
-                width="20"
-                src="/assets/images/github.svg"
-                alt="book"
-              />
-            </a>
-          </div>
-        </div>
-        <div className={styles.bannerImage}>
-          <Image
-            height="500"
-            width="500"
-            src="/assets/images/banner.png"
-            alt="Banner"
-          />
-        </div>
-      </section>
+      <Banner />
+      <Template text={text} />
     </main>
   );
 }
+
+const Banner = () => {
+  return (
+    <section className={styles.container}>
+      <div className={styles.textContainer}>
+        <h1>ME API</h1>
+        <p>
+          {' '}
+          Fake store rest API for your e-commerce or shopping website prototype
+        </p>
+        <div className={styles.btns}>
+          <Link href="/docs">
+            <a className={styles.docsAnchor}>
+              Read Docs
+              <Image
+                height="20"
+                width="20"
+                src="/assets/images/book.svg"
+                alt="book"
+              />
+            </a>
+          </Link>
+          <a className={styles.githubAnchor}>
+            View on GitHub
+            <Image
+              height="20"
+              width="20"
+              src="/assets/images/github.svg"
+              alt="book"
+            />
+          </a>
+        </div>
+      </div>
+      <div className={styles.bannerImage}>
+        <Image
+          height="500"
+          width="500"
+          src="/assets/images/banner.png"
+          alt="Banner"
+        />
+      </div>
+    </section>
+  );
+};
+
+const Template = ({ text }) => {
+  return (
+    <section className={styles.container}>
+      <CodeTemplate text={text} />
+    </section>
+  );
+};

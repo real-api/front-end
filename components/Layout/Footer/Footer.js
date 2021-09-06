@@ -52,7 +52,7 @@ const Footer = () => {
       </p>
       <CoffeeDiv>
         <img src="/assets/images/coffee.svg" alt="coffee icon" />
-        <Link href="/donation">Buy me a coffe</Link>
+        <Link href="/donation">Buy me a coffee</Link>
       </CoffeeDiv>
     </FooterDiv>
   );

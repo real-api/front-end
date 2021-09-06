@@ -1,13 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
-import Burger from './Burger';
+import Link from 'next/link';
+
 import styled from 'styled-components';
+
+import Burger from './Burger';
 
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
   position: relative;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -32,12 +39,14 @@ const Header = () => {
   return (
     <HeaderContainer>
       <ContentContainer>
-        <Image
-          src="/assets/images/Logo.png"
-          alt="picture of website logo"
-          width="45"
-          height="50"
-        />
+        <Link href="/">
+          <img
+            src="/assets/images/Logo.png"
+            alt="picture of website logo"
+            width="45"
+            height="50"
+          />
+        </Link>
         <Burger />
       </ContentContainer>
     </HeaderContainer>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+
 import styled from 'styled-components';
 
 const Ul = styled.ul`
@@ -53,7 +54,7 @@ const RightNav = ({ open }) => {
         </a>
       </li>
       <li>
-        <Link href="/donation">Buy me a coffe</Link>
+        <Link href="/donation">Buy me a coffee</Link>
       </li>
     </Ul>
   );
