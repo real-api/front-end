@@ -1,8 +1,19 @@
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  src: url('/assets/fonts/dana/dana-fanum regular.eot');
+  src: url('/assets/fonts/dana/dana-fanum regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/assets/fonts/dana/dana-fanum regular.woff') format('woff'),
+    url('/assets/fonts/dana/dana-fanum regular.ttf') format('truetype'),
+    url('/assets/fonts/dana/dana-fanum regular.woff2') format('woff2');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: dana, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 

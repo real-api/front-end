@@ -31,7 +31,7 @@ const Ul = styled.ul`
       color: #fff;
 
       &:hover {
-        color: #fff
+        color: #fff;
       }
     }
   }
