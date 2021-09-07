@@ -43,8 +43,7 @@ const Header = () => {
           <img
             src="/assets/images/Logo.png"
             alt="picture of website logo"
-            width="45"
-            height="50"
+            width="60"
           />
         </Link>
         <Burger />
