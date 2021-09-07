@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Highlight from 'react-highlight';
+import { getAllProducts } from '../../code/code';
 
 import styles from './CodeTemplate.module.css';
 

@@ -6,10 +6,9 @@ import styles from './HomePage.module.css';
 
 import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
 
+import { getAllProducts } from '../code/code';
+
 export default function Home() {
-  const text = `fetch('https://fakestoreapi.com/products/1')
-  .then(res=>res.json())
-  .then(json=>console.log(json))`;
   return (
     <main className={styles.mainContainer}>
       <Head>
@@ -18,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/assets/images/Logo.png" />
       </Head>
       <Banner />
-      <Template text={text} />
+      <Template text={getAllProducts} />
     </main>
   );
 }
