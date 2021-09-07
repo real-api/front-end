@@ -6,7 +6,7 @@ import RightNav from './RightNav';
 const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
-  position: absolute;
+  position: ${({ open }) => (open ? 'fixed' : 'absolute')};
   top: 30px;
   right: 30px;
   z-index: 20;

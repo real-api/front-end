@@ -84,6 +84,8 @@
   .container {
     flex-direction: column;
     padding: 50px 30px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   .btns {
     flex-direction: column;

@@ -1,5 +1,9 @@
-const getAllProducts = `fetch('https://fakestoreapi.com/products/1')
-.then(res=>res.json())
-.then(json=>console.log(json))`;
+const getAllProducts = [
+  `fetch('https://fakestoreapi.com/products/1')
+      .then(res => res.json())
+      .then(json => console.log(json))`,
+  `fetch('https://fakestoreapi.com/products/1')
+      .then(res => res.json())`,
+];
 
 export { getAllProducts };
