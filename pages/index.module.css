@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .textContainer {
@@ -85,7 +85,7 @@
     flex-direction: column;
     padding: 50px 30px;
     padding-bottom: 0;
-    margin-bottom: 0;
+    margin-bottom: 50px;
   }
   .btns {
     flex-direction: column;

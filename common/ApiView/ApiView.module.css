@@ -1,0 +1,52 @@
+.container {
+  width: 50%;
+}
+
+.container h2 {
+  color: #1565df;
+  font-size: 1.8rem;
+}
+
+.container p {
+  color: #7b7b7b;
+  font-size: 1rem;
+  font-weight: 200;
+  margin: 5px 0 20px;
+}
+
+.container li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.container a {
+  color: #0099ff;
+  font-size: 1.1rem;
+}
+
+.container span {
+  font-size: 1.1rem;
+}
+
+.container a:last-child {
+  background-color: #1565df;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  line-height: 25px;
+  transition: all 0.2s ease;
+}
+
+.container a:last-child:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}

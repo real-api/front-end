@@ -5,8 +5,10 @@ import Link from 'next/link';
 import styles from './index.module.css';
 
 import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
+import ApiView from '../common/ApiView/ApiView';
 
-import { getAllProducts } from '../code/code';
+import { getAllProducts } from '../constant/code';
+import { HomePageResources, HomePageRoutes } from '../constant/apiList';
 
 export default function Home() {
   return (
@@ -17,7 +19,23 @@ export default function Home() {
         <link rel="icon" href="/assets/images/Logo.png" />
       </Head>
       <Banner />
-      <Template text={getAllProducts} />
+      <section className={styles.container}>
+        <CodeTemplate text={getAllProducts} />
+      </section>
+      <section className={styles.container}>
+        <ApiView
+          title="Resources"
+          description="There are 4 main resources need in shopping prototypes"
+          apiList={HomePageResources}
+        />
+      </section>
+      <section className={styles.container}>
+        <ApiView
+          title="Routes"
+          description="All HTTP methods are supported"
+          apiList={HomePageRoutes}
+        />
+      </section>
     </main>
   );
 }
@@ -62,14 +80,6 @@ const Banner = () => {
           alt="Banner"
         />
       </div>
-    </section>
-  );
-};
-
-const Template = ({ text }) => {
-  return (
-    <section className={styles.container}>
-      <CodeTemplate text={text} />
     </section>
   );
 };
