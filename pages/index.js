@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './HomePage.module.css';
+import styles from './index.module.css';
 
 import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
 
