@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/font.css';
 import '../node_modules/highlight.js/styles/an-old-hope.css';
 
 import Layout from '../components/Layout/Layout';
