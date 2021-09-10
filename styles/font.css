@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: dana;
   font-weight: normal;
   src: url('/assets/fonts/dana/dana-fanum regular.eot');
@@ -18,4 +18,16 @@
     url('/assets/fonts/dana/dana-fanum bold.woff') format('woff'),
     url('/assets/fonts/dana/dana-fanum bold.ttf') format('truetype'),
     url('/assets/fonts/dana/dana-fanum bold.woff2') format('woff2');
+} */
+
+@font-face {
+  font-family: dana;
+  font-weight: normal;
+  src: url('/assets/fonts/dana/dana-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: dana;
+  font-weight: bold;
+  src: url('/assets/fonts/dana/dana-bold.woff') format('woff');
 }

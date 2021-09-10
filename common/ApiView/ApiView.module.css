@@ -30,7 +30,7 @@
   font-size: 1.1rem;
 }
 
-.container a:last-child {
+a.btn {
   background-color: #1565df;
   color: #fff;
   display: inline-block;
@@ -41,7 +41,7 @@
   transition: all 0.2s ease;
 }
 
-.container a:last-child:hover {
+a.btn:hover {
   transform: scale(1.05);
 }
 

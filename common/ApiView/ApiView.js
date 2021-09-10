@@ -28,7 +28,9 @@ const ApiView = ({ title, description, apiList }) => {
           </li>
         ))}
       </ul>
-      <Link className={styles.btn} href="/docs">View Details on Docs</Link>
+      <Link href="/docs">
+        <a className={styles.btn}>View Details on Docs</a>
+      </Link>
     </div>
   );
 };
