@@ -18,6 +18,11 @@ const Ul = styled.ul`
       color: #1565df;
     }
   }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    li {
+      padding: 18px 20px;
+    }
+  }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #1565d6;
