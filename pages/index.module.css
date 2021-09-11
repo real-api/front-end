@@ -64,7 +64,7 @@
 
 .githubAnchor:hover,
 .docsAnchor:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {

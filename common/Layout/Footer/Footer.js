@@ -11,6 +11,7 @@ const FooterDiv = styled.footer`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  z-index: 5;
 
   .text {
     font-weight: 200;

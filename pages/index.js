@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import styles from './index.module.css';
 
+import Layout from '../common/Layout/Layout';
 import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
 import ApiView from '../common/ApiView/ApiView';
 
@@ -12,31 +13,33 @@ import { HomePageResources, HomePageRoutes } from '../constant/apiList';
 
 export default function Home() {
   return (
-    <main className={styles.mainContainer}>
-      <Head>
-        <title>ME API</title>
-        <meta name="description" content="A real api" />
-        <link rel="icon" href="/assets/images/Logo.png" />
-      </Head>
-      <Banner />
-      <section className={styles.container}>
-        <CodeTemplate text={getAllProducts} />
-      </section>
-      <section className={styles.container}>
-        <ApiView
-          title="Resources"
-          description="There are 4 main resources need in shopping prototypes"
-          apiList={HomePageResources}
-        />
-      </section>
-      <section className={styles.container}>
-        <ApiView
-          title="Routes"
-          description="All HTTP methods are supported"
-          apiList={HomePageRoutes}
-        />
-      </section>
-    </main>
+    <Layout>
+      <main className={styles.mainContainer}>
+        <Head>
+          <title>ME API</title>
+          <meta name="description" content="A real api" />
+          <link rel="icon" href="/assets/images/Logo.png" />
+        </Head>
+        <Banner />
+        <section className={styles.container}>
+          <CodeTemplate text={getAllProducts} />
+        </section>
+        <section className={styles.container}>
+          <ApiView
+            title="Resources"
+            description="There are 4 main resources need in shopping prototypes"
+            apiList={HomePageResources}
+          />
+        </section>
+        <section className={styles.container}>
+          <ApiView
+            title="Routes"
+            description="All HTTP methods are supported"
+            apiList={HomePageRoutes}
+          />
+        </section>
+      </main>
+    </Layout>
   );
 }
 
