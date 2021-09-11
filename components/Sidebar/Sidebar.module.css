@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  padding: 50px 10px 30px 20px;
+  padding: 30px 10px 30px 30px;
 }
 
 .container::-webkit-scrollbar-track {
@@ -22,6 +22,25 @@
 
 .container::-webkit-scrollbar-thumb {
   background-color: #939393;
+}
+
+.container ul {
+  list-style: none;
+  padding: 30px 0 10px;
+}
+
+.container li {
+  color: #1565df;
+  padding: 5px 0;
+}
+
+.headerItem {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.item {
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {

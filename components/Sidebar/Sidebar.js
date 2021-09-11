@@ -6,52 +6,36 @@ const Sidebar = () => {
   return (
     <aside className={styles.container}>
       <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
+        <li className={styles.headerItem}>Products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
       </ul>
       <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
+        <li className={styles.headerItem}>Products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
       </ul>
       <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
+        <li className={styles.headerItem}>Products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
       </ul>
       <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-      <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-      <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
+        <li className={styles.headerItem}>Products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
+        <li className={styles.item}>Get all products</li>
       </ul>
     </aside>
   );
