@@ -9,15 +9,17 @@ import styles from './index.module.css';
 const Docs = () => {
   return (
     <>
-      <main className={styles.mainContainer}>
+      <div className={styles.mainContainer}>
         <Sidebar />
-        <section className={styles.container}>
-          <Header />
-          <div className={styles.contentContainer}>
+        <div className={styles.container}>
+          <nav className={styles.navbar}>
+            <Header />
+          </nav>
+          <main className={styles.contentContainer}>
             <h1>Milad</h1>
-          </div>
-        </section>
-      </main>
+          </main>
+        </div>
+      </div>
       <Footer />
     </>
   );
