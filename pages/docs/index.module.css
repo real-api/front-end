@@ -50,5 +50,10 @@
 @media (max-width: 768px) {
   .contentContainer {
     padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0;
+  }
+  .docsSection:first-child {
+    width: 100%;
   }
 }
