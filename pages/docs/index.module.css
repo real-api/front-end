@@ -14,7 +14,6 @@
 .contentContainer {
   max-width: 1000px;
   width: 100%;
-  height: 2000px;
   padding-top: 100px;
 }
 
@@ -23,14 +22,14 @@
 }
 
 .docsSection {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .docsSection:first-child {
   width: 50%;
 }
 
-.docsSection h2 {
+.header {
   color: #1565df;
   margin-bottom: 20px;
   font-size: 1.8rem;

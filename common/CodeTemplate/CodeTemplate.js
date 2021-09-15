@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader';
 
 import styles from './CodeTemplate.module.css';
 
-const CodeTemplate = ({ text }) => {
+const CodeTemplate = ({ text, title }) => {
   const [data, setData] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -20,7 +20,7 @@ const CodeTemplate = ({ text }) => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.header}>Example Code</h2>
+      <h2 className={title ? styles.docsHeader :styles.header}>{title ? title : 'Example Code'}</h2>
       <Highlight className={`javascript ${styles.highlight}`}>
         {text[0]}
       </Highlight>

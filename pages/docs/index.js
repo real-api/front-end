@@ -20,6 +20,7 @@ const Docs = () => {
           </nav>
           <main className={styles.contentContainer}>
             <section className={styles.docsSection}>
+              <h2 className={styles.header}>How to use it?</h2>
               <p>
                 fakeStoreApi can be used with any type of shopping project that
                 needs products, carts, and users in JSON format. you can use
@@ -28,8 +29,16 @@ const Docs = () => {
               </p>
             </section>
             <section className={styles.docsSection}>
-              <h2>Products</h2>
-              <CodeTemplate text={getAllProducts} />
+              <h2 className={styles.header}>Blogs</h2>
+              <CodeTemplate text={getAllProducts} title="Get all blogs" />
+              <CodeTemplate text={getAllProducts} title="Get all blogs" />
+              <CodeTemplate text={getAllProducts} title="Get all blogs" />
+            </section>
+            <section className={styles.docsSection}>
+              <h2 className={styles.header}>Comments</h2>
+              <CodeTemplate text={getAllProducts} title="Get all comments" />
+              <CodeTemplate text={getAllProducts} title="Get all comments" />
+              <CodeTemplate text={getAllProducts} title="Get all comments" />
             </section>
           </main>
         </div>
