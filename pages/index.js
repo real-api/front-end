@@ -18,7 +18,7 @@ export default function Home() {
         <Head>
           <title>ME API</title>
           <meta name="description" content="A real api" />
-          <link rel="icon" href="/assets/images/Logo.png" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <Banner />
         <section className={styles.container}>
