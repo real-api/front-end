@@ -11,7 +11,9 @@ const Sidebar = () => {
         <li className={styles.item}>Login</li>
       </ul>
       <ul>
-        <li className={styles.headerItem}>Blogs</li>
+        <li className={styles.headerItem}>
+          <a href="#blogs">Blogs</a>
+        </li>
         <li className={styles.item}>Create blog</li>
         <li className={styles.item}>Get all blogs</li>
         <li className={styles.item}>Get blog by ID</li>
@@ -19,7 +21,9 @@ const Sidebar = () => {
         <li className={styles.item}>Remove blog by ID</li>
       </ul>
       <ul>
-        <li className={styles.headerItem}>Comments</li>
+        <li className={styles.headerItem}>
+          <a href="#comments">Comments</a>
+        </li>
         <li className={styles.item}>Send comment</li>
         <li className={styles.item}>Get all comments</li>
         <li className={styles.item}>Get blog comments</li>

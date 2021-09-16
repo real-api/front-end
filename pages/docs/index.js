@@ -29,13 +29,17 @@ const Docs = () => {
               </p>
             </section>
             <section className={styles.docsSection}>
-              <h2 className={styles.header}>Blogs</h2>
+              <h2 id="blogs" className={styles.header}>
+                Blogs
+              </h2>
               <CodeTemplate text={getAllProducts} title="Get all blogs" />
               <CodeTemplate text={getAllProducts} title="Get all blogs" />
               <CodeTemplate text={getAllProducts} title="Get all blogs" />
             </section>
             <section className={styles.docsSection}>
-              <h2 className={styles.header}>Comments</h2>
+              <h2 id="comments" className={styles.header}>
+                Comments
+              </h2>
               <CodeTemplate text={getAllProducts} title="Get all comments" />
               <CodeTemplate text={getAllProducts} title="Get all comments" />
               <CodeTemplate text={getAllProducts} title="Get all comments" />
