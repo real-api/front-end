@@ -5,7 +5,11 @@ import Header from '../../common/Layout/Header/Header';
 import Footer from '../../common/Layout/Footer/Footer';
 import CodeTemplate from '../../common/CodeTemplate/CodeTemplate';
 
-import { getAllProducts } from '../../constant/code';
+import {
+  deleteFakeBlogById,
+  getAllFakeBlogs,
+  getFakeBlogById,
+} from '../../constant/code';
 
 import styles from './index.module.css';
 
@@ -32,17 +36,23 @@ const Docs = () => {
               <h2 id="blogs" className={styles.header}>
                 Blogs
               </h2>
-              <CodeTemplate text={getAllProducts} title="Get all blogs" />
-              <CodeTemplate text={getAllProducts} title="Get all blogs" />
-              <CodeTemplate text={getAllProducts} title="Get all blogs" />
+              <CodeTemplate text={getAllFakeBlogs} title="Get all fake blogs" />
+              <CodeTemplate
+                text={getFakeBlogById}
+                title="Get fake blog by ID"
+              />
+              <CodeTemplate
+                text={deleteFakeBlogById}
+                title="Delete fake blog by ID"
+              />
             </section>
             <section className={styles.docsSection}>
               <h2 id="comments" className={styles.header}>
                 Comments
               </h2>
-              <CodeTemplate text={getAllProducts} title="Get all comments" />
-              <CodeTemplate text={getAllProducts} title="Get all comments" />
-              <CodeTemplate text={getAllProducts} title="Get all comments" />
+              <CodeTemplate text={getAllFakeBlogs} title="Get all comments" />
+              <CodeTemplate text={getAllFakeBlogs} title="Get all comments" />
+              <CodeTemplate text={getAllFakeBlogs} title="Get all comments" />
             </section>
           </main>
         </div>

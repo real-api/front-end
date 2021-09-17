@@ -8,7 +8,7 @@ import Layout from '../common/Layout/Layout';
 import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
 import ApiView from '../common/ApiView/ApiView';
 
-import { getAllProducts } from '../constant/code';
+import { getAllFakeBlogs } from '../constant/code';
 import { HomePageResources, HomePageRoutes } from '../constant/apiList';
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
         </Head>
         <Banner />
         <section className={styles.container}>
-          <CodeTemplate text={getAllProducts} />
+          <CodeTemplate text={getAllFakeBlogs} />
         </section>
         <section className={styles.container}>
           <ApiView
