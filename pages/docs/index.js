@@ -7,8 +7,11 @@ import CodeTemplate from '../../common/CodeTemplate/CodeTemplate';
 
 import {
   deleteFakeBlogById,
+  deleteFakeCommentById,
   getAllFakeBlogs,
+  getAllFakeComments,
   getFakeBlogById,
+  getFakeCommentById,
 } from '../../constant/code';
 
 import styles from './index.module.css';
@@ -50,9 +53,18 @@ const Docs = () => {
               <h2 id="comments" className={styles.header}>
                 Comments
               </h2>
-              <CodeTemplate text={getAllFakeBlogs} title="Get all comments" />
-              <CodeTemplate text={getAllFakeBlogs} title="Get all comments" />
-              <CodeTemplate text={getAllFakeBlogs} title="Get all comments" />
+              <CodeTemplate
+                text={getAllFakeComments}
+                title="Get all fake comments"
+              />
+              <CodeTemplate
+                text={getFakeCommentById}
+                title="Get fake comment by ID"
+              />
+              <CodeTemplate
+                text={deleteFakeCommentById}
+                title="Delete fake comment by ID"
+              />
             </section>
           </main>
         </div>
