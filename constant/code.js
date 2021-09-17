@@ -1,8 +1,10 @@
+const BASE_URL = 'http://localhost:3300';
+
 const getAllProducts = [
-  `fetch('https://fakestoreapi.com/products/1')
+  `fetch('${BASE_URL}/blogs')
       .then(res => res.json())
       .then(json => console.log(json))`,
-  `fetch('https://fakestoreapi.com/products/1')
+  `fetch('${BASE_URL}/blogs')
       .then(res => res.json())`,
 ];
 
