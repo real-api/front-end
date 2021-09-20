@@ -39,14 +39,20 @@ const Docs = () => {
               <h2 id="blogs" className={styles.header}>
                 Blogs
               </h2>
-              <CodeTemplate text={getAllFakeBlogs} title="Get all fake blogs" />
+              <CodeTemplate
+                text={getAllFakeBlogs}
+                title="Get all fake blogs"
+                id="get-all-fake-blogs"
+              />
               <CodeTemplate
                 text={getFakeBlogById}
                 title="Get fake blog by ID"
+                id="get-fake-blog-by-id"
               />
               <CodeTemplate
                 text={deleteFakeBlogById}
                 title="Delete fake blog by ID"
+                id="delete-fake-blog-by-id"
               />
             </section>
             <section className={styles.docsSection}>
