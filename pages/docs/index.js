@@ -62,14 +62,17 @@ const Docs = () => {
               <CodeTemplate
                 text={getAllFakeComments}
                 title="Get all fake comments"
+                id="get-all-fake-comments"
               />
               <CodeTemplate
                 text={getFakeCommentById}
                 title="Get fake comment by ID"
+                id="get-fake-comment-by-id"
               />
               <CodeTemplate
                 text={deleteFakeCommentById}
                 title="Delete fake comment by ID"
+                id="delete-fake-comment-by-id"
               />
             </section>
           </main>
