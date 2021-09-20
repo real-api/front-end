@@ -35,7 +35,7 @@ const Sidebar = () => {
         </li>
       </ul>
       <h3 className={styles.headerItem}>Real API</h3>
-      <ul>
+      <ul className={styles.firstUl}>
         <li className={styles.headerItem}>Authentication</li>
         <li className={styles.item}>Register</li>
         <li className={styles.item}>Login</li>
