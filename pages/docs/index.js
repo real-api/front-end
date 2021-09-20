@@ -37,7 +37,7 @@ const Docs = () => {
             </section>
             <section className={styles.docsSection}>
               <h2 id="blogs" className={styles.header}>
-                Blogs
+                Fake Blogs
               </h2>
               <CodeTemplate
                 text={getAllFakeBlogs}
@@ -57,7 +57,7 @@ const Docs = () => {
             </section>
             <section className={styles.docsSection}>
               <h2 id="comments" className={styles.header}>
-                Comments
+                Fake Comments
               </h2>
               <CodeTemplate
                 text={getAllFakeComments}
