@@ -123,6 +123,16 @@ const getAllComments = [
     .then((json) => console.log(json))`,
 ];
 
+const getBlogComments = [
+  `fetch('${BASE_URL}/api/panel/comments/<blog_id>/blog', {
+    headers: {
+      Authorization: 'Bearer <your token>',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
 export {
   getAllFakeBlogs,
   getFakeBlogById,
@@ -136,4 +146,5 @@ export {
   getBlogById,
   deleteBlogById,
   getAllComments,
+  getBlogComments,
 };

@@ -14,6 +14,7 @@ import {
   getAllFakeBlogs,
   getAllFakeComments,
   getBlogById,
+  getBlogComments,
   getFakeBlogById,
   getFakeCommentById,
   login,
@@ -40,12 +41,15 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/api/panel/comments', {
-      headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
-      },
-    })
+    fetch(
+      'http://localhost:3300/api/panel/comments/6149c50df939b67c123aaaa1/blog',
+      {
+        headers: {
+          Authorization:
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
+        },
+      }
+    )
       .then((response) => response.json())
       .then((json) => console.log(json))
       .catch((err) => console.log(err.response));
@@ -102,7 +106,8 @@ const Docs = () => {
               >
                 Get all comments of every blogs using this api.
                 <br />
-                At first it returns an empty array because you should add
+                At first it returns an empty array because you should{' '}
+                <span className={styles.highlight}>add </span>
                 comments according to what has been said{' '}
                 <span className={styles.highlight}>
                   <a href="#">below</a>
@@ -110,13 +115,20 @@ const Docs = () => {
                 .
               </CodeTemplate>
               <CodeTemplate
-                text={getBlogById}
+                text={getBlogComments}
                 title="Get blog comments"
                 id="get-blog-comments"
               >
-                To get a specific blog add that{' '}
-                <span className={styles.highlight}>blog ID</span> as an endpoint
-                to <span className={styles.highlight}>URL</span>
+                To get comments of a specific blog use this one.
+                <br />
+                At first it returns an empty array because you should{' '}
+                <span className={styles.highlight}>confirm </span>
+                comments according to what has been said{' '}
+                <span className={styles.highlight}>
+                  <a href="#">below</a>
+                </span>
+                , actually it only returns comments with{' '}
+                <span className={styles.highlight}>flag</span> of true.
               </CodeTemplate>
               <CodeTemplate
                 text={getBlogById}
@@ -251,9 +263,9 @@ const RealBlogs = () => {
       <CodeTemplate text={getAllBlogs} title="Get all blogs" id="get-all-blogs">
         A simple <span className={styles.highlight}>GET</span> request, just
         need your <span className={styles.highlight}>token</span> in header when
-        sending request and then you get all created blogs. At first it returns
-        an empty array because you should add blogs according to what has been
-        said{' '}
+        sending request and then you get all created blogs.
+        <br /> At first it returns an empty array because you should add blogs
+        according to what has been said{' '}
         <span className={styles.highlight}>
           <a href="#">below</a>
         </span>
@@ -265,7 +277,7 @@ const RealBlogs = () => {
         id="get-blog-by-id"
       >
         To get a specific blog add that{' '}
-        <span className={styles.highlight}>blog ID</span> as an endpoint to{' '}
+        <span className={styles.highlight}>blog's ID</span> as an endpoint to{' '}
         <span className={styles.highlight}>URL</span>
       </CodeTemplate>
       <CodeTemplate text={getBlogById} title="Create blog" id="create-blog">
