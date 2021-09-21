@@ -130,6 +130,15 @@ const Docs = () => {
                 </span>
                 .
               </CodeTemplate>
+              <CodeTemplate
+                text={getBlogById}
+                title="Update blog"
+                id="update-blog"
+              >
+                You can also <span className={styles.highlight}>update</span>{' '}
+                all or one of the blogs data. notice that this is{' '}
+                <span className={styles.highlight}>PATCH</span> request.
+              </CodeTemplate>
             </section>
           </main>
         </div>
