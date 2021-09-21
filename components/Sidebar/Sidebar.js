@@ -47,7 +47,7 @@ const Sidebar = () => {
           <a href="#register">Register</a>
         </li>
         <li className={styles.item}>
-          <a href="">Login</a>
+          <a href="#login">Login</a>
         </li>
       </ul>
     </aside>

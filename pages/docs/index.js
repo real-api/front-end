@@ -12,6 +12,7 @@ import {
   getAllFakeComments,
   getFakeBlogById,
   getFakeCommentById,
+  login,
   register,
 } from '../../constant/code';
 
@@ -33,14 +34,14 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/auth/register', {
+    fetch('http://localhost:3300/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: 'milad',
-        email: 'asklndasdm@gmail.com',
+        email: 'miladazami120@gmail.com',
+        password: 'cv6SEemUJdOUHH',
       }),
     })
       .then((response) => response.json())
@@ -117,10 +118,14 @@ const Docs = () => {
                 register and then your{' '}
                 <span className={styles.highlight}>token</span> and{' '}
                 <span className={styles.highlight}>password</span> will be sent
-                to your email (be careful to send a valid email). use{' '}
+                to your email (be careful to post a valid email). use{' '}
                 <span className={styles.highlight}>token</span> for next
                 requests and <span className={styles.highlight}>password</span>{' '}
                 for login according to what is said below.
+              </CodeTemplate>
+              <CodeTemplate text={login} title="Login" id="login">
+                In this section, you can log in using the password that was
+                emailed to you and get your token.
               </CodeTemplate>
             </section>
           </main>

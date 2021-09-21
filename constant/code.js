@@ -67,6 +67,19 @@ const register = [
     .then((json) => console.log(json))`,
 ];
 
+const login = [
+  `fetch('http://localhost:3300/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: <your email>,
+      password: <your password>,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
 export {
   getAllFakeBlogs,
   getFakeBlogById,
@@ -75,4 +88,5 @@ export {
   getFakeCommentById,
   deleteFakeCommentById,
   register,
+  login,
 };
