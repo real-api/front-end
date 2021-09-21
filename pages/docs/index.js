@@ -8,6 +8,7 @@ import CodeTemplate from '../../common/CodeTemplate/CodeTemplate';
 import {
   confirmComment,
   deleteBlogById,
+  deleteComment,
   deleteFakeBlogById,
   deleteFakeCommentById,
   getAllBlogs,
@@ -44,12 +45,11 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/api/panel/comments/614a2e14179883ab91267530', {
-      method: 'PATCH',
+    fetch('http://localhost:3300/api/panel/comments/614a2e9c179883ab9126753b', {
+      method: 'DELETE',
       headers: {
         Authorization:
           'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
-        'Content-Type': 'Application/json',
       },
     })
       .then((response) => response.json())
@@ -162,6 +162,14 @@ const Docs = () => {
                 <span className={styles.highlight}>flag</span> of{' '}
                 <span className={styles.highlight}>true</span> will be returned
                 in response of a specific blog's comments.
+              </CodeTemplate>
+              <CodeTemplate
+                text={deleteComment}
+                title="Delete comment"
+                id="delete-comment"
+              >
+                Send a <span className={styles.highlight}>DELETE</span> request
+                to remove a specific comment
               </CodeTemplate>
             </section>
           </main>

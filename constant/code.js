@@ -181,6 +181,19 @@ const confirmComment = [
     .then((json) => console.log(json))`,
 ];
 
+const deleteComment = [
+  `fetch('http://localhost:3300/api/panel/comments/<comment_id>',
+    {
+      method: 'DELETE',
+      headers: {
+        'Authorization': 'Bearer <token>',
+      }
+    }
+  )
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
 export {
   getAllFakeBlogs,
   getFakeBlogById,
@@ -198,4 +211,5 @@ export {
   sendComment,
   replyComment,
   confirmComment,
+  deleteComment,
 };
