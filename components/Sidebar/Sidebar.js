@@ -50,6 +50,26 @@ const Sidebar = () => {
           <a href="#login">Login</a>
         </li>
       </ul>
+      <ul>
+        <li className={styles.headerItem}>
+          <a href="#real-blogs">Blogs</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#get-all-blogs">Get all blogs</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#get-blog-by-id">Get blog by ID</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#create-blog">Create blog</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#update-blog">Update blog</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#delete-blog">Delete blog</a>
+        </li>
+      </ul>
     </aside>
   );
 };

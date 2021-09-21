@@ -90,65 +90,7 @@ const Docs = () => {
             <FakeBlogs />
             <FakeComments />
             <Authorization />
-            <section className={styles.docsSection}>
-              <h2 id="authentication" className={styles.header}>
-                Real Blogs
-              </h2>
-              <CodeTemplate
-                text={getAllBlogs}
-                title="Get all blogs"
-                id="get-all-blogs"
-              >
-                A simple <span className={styles.highlight}>GET</span> request,
-                just need your <span className={styles.highlight}>token</span>{' '}
-                in header when sending request and then you get all created
-                blogs.
-              </CodeTemplate>
-              <CodeTemplate
-                text={getBlogById}
-                title="Get blog by ID"
-                id="get-blog-by-id"
-              >
-                To get a specific blog add that{' '}
-                <span className={styles.highlight}>blog ID</span> as an endpoint
-                to <span className={styles.highlight}>URL</span>
-              </CodeTemplate>
-              <CodeTemplate
-                text={getBlogById}
-                title="Create blog"
-                id="create-blog"
-              >
-                You sent request to get all blogs but an empty array returned?
-                that's OK! blogs should be created first using this api. for
-                creating blogs send a{' '}
-                <span className={styles.highlight}>POST</span> request that its
-                body is a <span className={styles.highlight}>FormData </span>
-                containing{' '}
-                <span className={styles.highlight}>
-                  title, text, image and tags
-                </span>
-                .
-              </CodeTemplate>
-              <CodeTemplate
-                text={getBlogById}
-                title="Update blog"
-                id="update-blog"
-              >
-                You can also <span className={styles.highlight}>update</span>{' '}
-                all or one of the blogs data. notice that this is{' '}
-                <span className={styles.highlight}>PATCH</span> request.
-              </CodeTemplate>
-              <CodeTemplate
-                text={deleteBlogById}
-                title="Delete blog"
-                id="delete-blog"
-              >
-                Add the <span className={styles.highlight}>blog ID</span> to the
-                end of the <span className={styles.highlight}>URL</span> and
-                send a <span className={styles.highlight}>DELETE</span> request
-                to delete a specific blog.
-              </CodeTemplate>
-            </section>
+            <RealBlogs />
           </main>
         </div>
       </div>
@@ -242,6 +184,49 @@ const Authorization = () => {
         In this section, you can log in using the{' '}
         <span className={styles.highlight}>password</span> that was emailed to
         you and get your <span className={styles.highlight}>token</span>.
+      </CodeTemplate>
+    </section>
+  );
+};
+
+const RealBlogs = () => {
+  return (
+    <section className={styles.docsSection}>
+      <h2 id="real-blogs" className={styles.header}>
+        Real Blogs
+      </h2>
+      <CodeTemplate text={getAllBlogs} title="Get all blogs" id="get-all-blogs">
+        A simple <span className={styles.highlight}>GET</span> request, just
+        need your <span className={styles.highlight}>token</span> in header when
+        sending request and then you get all created blogs.
+      </CodeTemplate>
+      <CodeTemplate
+        text={getBlogById}
+        title="Get blog by ID"
+        id="get-blog-by-id"
+      >
+        To get a specific blog add that{' '}
+        <span className={styles.highlight}>blog ID</span> as an endpoint to{' '}
+        <span className={styles.highlight}>URL</span>
+      </CodeTemplate>
+      <CodeTemplate text={getBlogById} title="Create blog" id="create-blog">
+        You sent request to get all blogs but an empty array returned? that's
+        OK! blogs should be created first using this api. for creating blogs
+        send a <span className={styles.highlight}>POST</span> request that its
+        body is a <span className={styles.highlight}>FormData </span>
+        containing{' '}
+        <span className={styles.highlight}>title, text, image and tags</span>.
+      </CodeTemplate>
+      <CodeTemplate text={getBlogById} title="Update blog" id="update-blog">
+        You can also <span className={styles.highlight}>update</span> all or one
+        of the blogs data. notice that this is{' '}
+        <span className={styles.highlight}>PATCH</span> request.
+      </CodeTemplate>
+      <CodeTemplate text={deleteBlogById} title="Delete blog" id="delete-blog">
+        Add the <span className={styles.highlight}>blog ID</span> to the end of
+        the <span className={styles.highlight}>URL</span> and send a{' '}
+        <span className={styles.highlight}>DELETE</span> request to delete a
+        specific blog.
       </CodeTemplate>
     </section>
   );
