@@ -52,7 +52,7 @@ const Sidebar = () => {
       </ul>
       <ul>
         <li className={styles.headerItem}>
-          <a href="#real-blogs">Blogs</a>
+          <a href="#real-blogs">Real Blogs</a>
         </li>
         <li className={styles.item}>
           <a href="#get-all-blogs">Get all blogs</a>
@@ -68,6 +68,29 @@ const Sidebar = () => {
         </li>
         <li className={styles.item}>
           <a href="#delete-blog">Delete blog</a>
+        </li>
+      </ul>
+      <ul>
+        <li className={styles.headerItem}>
+          <a href="#real-comments">Real Comments</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#get-all-comments">Get all comments</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#get-blog-comments">Get blog comments</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#send-comment">Send comments</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#reply-comment">Reply comment</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#confirm-comment">Confirm comment</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#delete-comment">Delete comment</a>
         </li>
       </ul>
     </aside>

@@ -97,81 +97,7 @@ const Docs = () => {
             <FakeComments />
             <Authorization />
             <RealBlogs />
-            <section className={styles.docsSection}>
-              <h2 id="real-blogs" className={styles.header}>
-                Real Comments
-              </h2>
-              <CodeTemplate
-                text={getAllComments}
-                title="Get all comments"
-                id="get-all-comments"
-              >
-                Get all comments of every blogs using this api.
-                <br />
-                At first it returns an empty array because you should{' '}
-                <span className={styles.highlight}>send </span>
-                comments according to what has been said{' '}
-                <span className={styles.highlight}>
-                  <a href="#">below</a>
-                </span>
-                .
-              </CodeTemplate>
-              <CodeTemplate
-                text={getBlogComments}
-                title="Get blog comments"
-                id="get-blog-comments"
-              >
-                To get comments of a specific blog use this one.
-                <br />
-                At first it returns an empty array because you should{' '}
-                <span className={styles.highlight}>confirm </span>
-                comments according to what has been said{' '}
-                <span className={styles.highlight}>
-                  <a href="#">below</a>
-                </span>
-                , actually it only returns comments with{' '}
-                <span className={styles.highlight}>flag</span> of true.
-              </CodeTemplate>
-              <CodeTemplate
-                text={sendComment}
-                title="Send comment"
-                id="send-comment"
-              >
-                To send comments to a blog you need
-                <span className={styles.highlight}> ID</span> of that blog.
-              </CodeTemplate>
-              <CodeTemplate
-                text={replyComment}
-                title="Reply comment"
-                id="reply-comment"
-              >
-                You also can <span className={styles.highlight}>reply</span> to
-                a comment just like the example. <br />
-                Each reply should be{' '}
-                <span className={styles.highlight}>confirmed</span>
-              </CodeTemplate>
-              <CodeTemplate
-                text={confirmComment}
-                title="Confirm comment"
-                id="confirm-comment"
-              >
-                Each comment should be{' '}
-                <span className={styles.highlight}>confirmed</span> to turn its{' '}
-                <span className={styles.highlight}>flag</span> to true. <br />
-                Only comments with{' '}
-                <span className={styles.highlight}>flag</span> of{' '}
-                <span className={styles.highlight}>true</span> will be returned
-                in response of a specific blog's comments.
-              </CodeTemplate>
-              <CodeTemplate
-                text={deleteComment}
-                title="Delete comment"
-                id="delete-comment"
-              >
-                Send a <span className={styles.highlight}>DELETE</span> request
-                to remove a specific comment
-              </CodeTemplate>
-            </section>
+            <RealComments />
           </main>
         </div>
       </div>
@@ -314,6 +240,81 @@ const RealBlogs = () => {
         the <span className={styles.highlight}>URL</span> and send a{' '}
         <span className={styles.highlight}>DELETE</span> request to delete a
         specific blog.
+      </CodeTemplate>
+    </section>
+  );
+};
+
+const RealComments = () => {
+  return (
+    <section className={styles.docsSection}>
+      <h2 id="real-comments" className={styles.header}>
+        Real Comments
+      </h2>
+      <CodeTemplate
+        text={getAllComments}
+        title="Get all comments"
+        id="get-all-comments"
+      >
+        Get all comments of every blogs using this api.
+        <br />
+        At first it returns an empty array because you should{' '}
+        <span className={styles.highlight}>send </span>
+        comments according to what has been said{' '}
+        <span className={styles.highlight}>
+          <a href="#">below</a>
+        </span>
+        .
+      </CodeTemplate>
+      <CodeTemplate
+        text={getBlogComments}
+        title="Get blog comments"
+        id="get-blog-comments"
+      >
+        To get comments of a specific blog use this one.
+        <br />
+        At first it returns an empty array because you should{' '}
+        <span className={styles.highlight}>confirm </span>
+        comments according to what has been said{' '}
+        <span className={styles.highlight}>
+          <a href="#">below</a>
+        </span>
+        , actually it only returns comments with{' '}
+        <span className={styles.highlight}>flag</span> of true.
+      </CodeTemplate>
+      <CodeTemplate text={sendComment} title="Send comment" id="send-comment">
+        To send comments to a blog you need
+        <span className={styles.highlight}> ID</span> of that blog.
+      </CodeTemplate>
+      <CodeTemplate
+        text={replyComment}
+        title="Reply comment"
+        id="reply-comment"
+      >
+        You also can <span className={styles.highlight}>reply</span> to a
+        comment just like the example. <br />
+        Each reply should be <span className={styles.highlight}>confirmed</span>
+      </CodeTemplate>
+      <CodeTemplate
+        text={confirmComment}
+        title="Confirm comment"
+        id="confirm-comment"
+      >
+        Each comment should be{' '}
+        <span className={styles.highlight}>confirmed</span> to turn its{' '}
+        <span className={styles.highlight}>flag</span> to true. <br />
+        Only comments with <span className={styles.highlight}>
+          flag
+        </span> of <span className={styles.highlight}>true</span> will be
+        returned in response of a specific blog's comments.
+      </CodeTemplate>
+      <CodeTemplate
+        text={deleteComment}
+        title="Delete comment"
+        id="delete-comment"
+      >
+        Send a <span className={styles.highlight}>DELETE</span> request to
+        remove a specific comment
       </CodeTemplate>
     </section>
   );
