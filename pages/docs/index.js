@@ -22,7 +22,7 @@ import axios from 'axios';
 const Docs = () => {
   const body = {
     name: 'milad',
-    email: 'dfwjhvjkm@gmail.com',
+    email: 'asdasdm@gmail.com',
   };
   const headers = {
     'Content-Type': 'application/json',
@@ -35,10 +35,16 @@ const Docs = () => {
     //   .catch((err) => console.log(err.response));
     fetch('http://localhost:3300/auth/register', {
       method: 'POST',
-      headers: headers,
-      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: 'milad',
+        email: 'asklndasdm@gmail.com',
+      }),
     })
-      .then((response) => console.log(response))
+      .then((response) => response.json())
+      .then((json) => console.log(json))
       .catch((err) => console.log(err.response));
   }, []);
 

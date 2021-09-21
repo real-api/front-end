@@ -33,7 +33,7 @@ const CodeTemplate = ({ text, title, id, children }) => {
           {`${JSON.stringify(data, null, 2)}`}
         </Highlight>
       )}
-      {children && <p>{children}</p>}
+      {children && <p className={styles.paragraph}>{children}</p>}
     </div>
   );
 };

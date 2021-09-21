@@ -57,12 +57,14 @@ const deleteFakeCommentById = [
 const register = [
   `fetch('${BASE_URL}/auth/register', {
     method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       name: <your name>,
-      email: <your valid email>
-    })})
-  .then(res => res.json())
-  .then(json => console.log(json))`,
+      email: <your email>,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
 ];
 
 export {
