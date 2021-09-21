@@ -40,6 +40,11 @@
   text-align: justify;
 }
 
+.highlight {
+  color: #3d3d3d;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .contentContainer {
     padding-left: 100px;

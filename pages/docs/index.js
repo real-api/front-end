@@ -83,12 +83,14 @@ const Docs = () => {
                 Authentication
               </h2>
               <CodeTemplate text={register} title="Register" id="register">
-                You forgot to include the json property that contains the data
-                you want to send. However, I the body is not being treated
-                correctly anyway. See this fiddle to see that the delay of 5
-                seconds gets skipped. jsfiddle.net/99arsnkg Also, when you try
-                to add additional headers, they are ignored. This is probably an
-                issue with fetch() itself
+                Welcome, here is the first step for using real api, you need to
+                register and then your{' '}
+                <span className={styles.highlight}>token</span> and{' '}
+                <span className={styles.highlight}>password</span> will be sent
+                to your email. use{' '}
+                <span className={styles.highlight}>token</span> for next
+                requests and <span className={styles.highlight}>password</span>{' '}
+                for login according to what is said below.
               </CodeTemplate>
             </section>
           </main>
