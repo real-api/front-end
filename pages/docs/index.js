@@ -8,6 +8,7 @@ import CodeTemplate from '../../common/CodeTemplate/CodeTemplate';
 import {
   deleteFakeBlogById,
   deleteFakeCommentById,
+  getAllBlogs,
   getAllFakeBlogs,
   getAllFakeComments,
   getFakeBlogById,
@@ -34,15 +35,11 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/auth/login', {
-      method: 'POST',
+    fetch('http://localhost:3300/api/panel/blogs', {
       headers: {
-        'Content-Type': 'application/json',
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
       },
-      body: JSON.stringify({
-        email: 'miladazami120@gmail.com',
-        password: 'cv6SEemUJdOUHH',
-      }),
     })
       .then((response) => response.json())
       .then((json) => console.log(json))
@@ -124,8 +121,25 @@ const Docs = () => {
                 for login according to what is said below.
               </CodeTemplate>
               <CodeTemplate text={login} title="Login" id="login">
-                In this section, you can log in using the password that was
-                emailed to you and get your token.
+                In this section, you can log in using the{' '}
+                <span className={styles.highlight}>password</span> that was
+                emailed to you and get your{' '}
+                <span className={styles.highlight}>token</span>.
+              </CodeTemplate>
+            </section>
+            <section className={styles.docsSection}>
+              <h2 id="authentication" className={styles.header}>
+                Real Blogs
+              </h2>
+              <CodeTemplate
+                text={getAllBlogs}
+                title="Get all blogs"
+                id="get-all-blogs"
+              >
+                A simple <span className={styles.highlight}>GET</span> request,
+                just need your <span className={styles.highlight}>token</span>{' '}
+                in header when sending request and then you get all created
+                blogs.
               </CodeTemplate>
             </section>
           </main>

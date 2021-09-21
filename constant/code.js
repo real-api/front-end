@@ -63,8 +63,8 @@ const register = [
       email: <your email>,
     }),
   })
-    .then((response) => response.json())
-    .then((json) => console.log(json))`,
+  .then((response) => response.json())
+  .then((json) => console.log(json))`,
 ];
 
 const login = [
@@ -75,6 +75,18 @@ const login = [
       email: <your email>,
       password: <your password>,
     }),
+  })
+  .then((response) => response.json())
+  .then((json) => console.log(json))`,
+];
+
+// Authentication ==================================================================
+const getAllBlogs = [
+  `fetch('${BASE_URL}/api/panel/blogs', {
+    headers: {
+      Authorization:
+        'Bearer <your token>',
+    },
   })
     .then((response) => response.json())
     .then((json) => console.log(json))`,
@@ -89,4 +101,5 @@ export {
   deleteFakeCommentById,
   register,
   login,
+  getAllBlogs,
 };
