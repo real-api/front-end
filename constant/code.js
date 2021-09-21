@@ -80,7 +80,7 @@ const login = [
   .then((json) => console.log(json))`,
 ];
 
-// Authentication ==================================================================
+// Real Blogs ==================================================================
 const getAllBlogs = [
   `fetch('${BASE_URL}/api/panel/blogs', {
     headers: {
@@ -112,6 +112,17 @@ const deleteBlogById = [
     .then((json) => console.log(json))`,
 ];
 
+// Real comments ==================================================================
+const getAllComments = [
+  `fetch('${BASE_URL}/api/panel/comments', {
+    headers: {
+      Authorization: 'Bearer <your token>',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
 export {
   getAllFakeBlogs,
   getFakeBlogById,
@@ -124,4 +135,5 @@ export {
   getAllBlogs,
   getBlogById,
   deleteBlogById,
+  getAllComments,
 };

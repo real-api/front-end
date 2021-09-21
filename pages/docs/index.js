@@ -10,6 +10,7 @@ import {
   deleteFakeBlogById,
   deleteFakeCommentById,
   getAllBlogs,
+  getAllComments,
   getAllFakeBlogs,
   getAllFakeComments,
   getBlogById,
@@ -39,8 +40,7 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/api/panel/blogs/6149c463f939b67c123aaa7e', {
-      method: 'DELETE',
+    fetch('http://localhost:3300/api/panel/comments', {
       headers: {
         Authorization:
           'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
@@ -91,6 +91,59 @@ const Docs = () => {
             <FakeComments />
             <Authorization />
             <RealBlogs />
+            <section className={styles.docsSection}>
+              <h2 id="real-blogs" className={styles.header}>
+                Real Commeents
+              </h2>
+              <CodeTemplate
+                text={getAllComments}
+                title="Get all comments"
+                id="get-all-comments"
+              >
+                Get all comments of every blogs using this api.
+                <br />
+                At first it returns an empty array because you should add
+                comments according to what has been said{' '}
+                <span className={styles.highlight}>
+                  <a href="#">below</a>
+                </span>
+                .
+              </CodeTemplate>
+              <CodeTemplate
+                text={getBlogById}
+                title="Get blog comments"
+                id="get-blog-comments"
+              >
+                To get a specific blog add that{' '}
+                <span className={styles.highlight}>blog ID</span> as an endpoint
+                to <span className={styles.highlight}>URL</span>
+              </CodeTemplate>
+              <CodeTemplate
+                text={getBlogById}
+                title="Send comment"
+                id="send-comment"
+              >
+                You sent request to get all blogs but an empty array returned?
+                that's OK! blogs should be created first using this api. for
+                creating blogs send a{' '}
+                <span className={styles.highlight}>POST</span> request that its
+                body is a <span className={styles.highlight}>FormData </span>
+                containing{' '}
+                <span className={styles.highlight}>
+                  title, text, image and tags
+                </span>
+                .
+              </CodeTemplate>
+              <CodeTemplate
+                text={getBlogById}
+                title="Remove comment"
+                id="update-blog"
+              >
+                You can also <span className={styles.highlight}>update</span>{' '}
+                all or one of the blogs data. notice that this is{' '}
+                <span className={styles.highlight}>PATCH</span> request.
+              </CodeTemplate>
+            </section>
           </main>
         </div>
       </div>
@@ -198,7 +251,13 @@ const RealBlogs = () => {
       <CodeTemplate text={getAllBlogs} title="Get all blogs" id="get-all-blogs">
         A simple <span className={styles.highlight}>GET</span> request, just
         need your <span className={styles.highlight}>token</span> in header when
-        sending request and then you get all created blogs.
+        sending request and then you get all created blogs. At first it returns
+        an empty array because you should add blogs according to what has been
+        said{' '}
+        <span className={styles.highlight}>
+          <a href="#">below</a>
+        </span>
+        .
       </CodeTemplate>
       <CodeTemplate
         text={getBlogById}
