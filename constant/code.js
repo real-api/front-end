@@ -84,7 +84,7 @@ const login = [
 const getAllBlogs = [
   `fetch('${BASE_URL}/api/panel/blogs', {
     headers: {
-      Authorization: 'Bearer <your token>',
+      'Authorization': 'Bearer <your token>',
     },
   })
     .then((response) => response.json())
@@ -94,7 +94,7 @@ const getAllBlogs = [
 const getBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     headers: {
-      Authorization: 'Bearer <your token>',
+      'Authorization': 'Bearer <your token>',
     },
   })
     .then((response) => response.json())
@@ -105,7 +105,7 @@ const deleteBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     method: 'DELETE',
     headers: {
-      Authorization: 'Bearer <your token>',
+      'Authorization': 'Bearer <your token>',
     },
   })
     .then((response) => response.json())
@@ -116,7 +116,7 @@ const deleteBlogById = [
 const getAllComments = [
   `fetch('${BASE_URL}/api/panel/comments', {
     headers: {
-      Authorization: 'Bearer <your token>',
+      'Authorization': 'Bearer <your token>',
     },
   })
     .then((response) => response.json())
@@ -126,9 +126,26 @@ const getAllComments = [
 const getBlogComments = [
   `fetch('${BASE_URL}/api/panel/comments/<blog_id>/blog', {
     headers: {
-      Authorization: 'Bearer <your token>',
+      'Authorization': 'Bearer <your token>',
     },
   })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
+const sendComment = [
+  `fetch('http://localhost:3300/api/panel/comments/<blog_id>',
+    {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer <token>',
+        'Content-Type': 'Application/json',
+      },
+      body: JSON.stringify({
+        text: 'test comment',
+      }),
+    }
+  )
     .then((response) => response.json())
     .then((json) => console.log(json))`,
 ];
@@ -147,4 +164,5 @@ export {
   deleteBlogById,
   getAllComments,
   getBlogComments,
+  sendComment,
 };

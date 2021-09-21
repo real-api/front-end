@@ -19,6 +19,7 @@ import {
   getFakeCommentById,
   login,
   register,
+  sendComment,
 } from '../../constant/code';
 
 import styles from './index.module.css';
@@ -42,12 +43,17 @@ const Docs = () => {
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
     fetch(
-      'http://localhost:3300/api/panel/comments/6149c50df939b67c123aaaa1/blog',
+      'http://localhost:3300/api/panel/comments/6149c50df939b67c123aaaa1/',
       {
+        method: 'POST',
         headers: {
           Authorization:
             'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
+          'Content-Type': 'Application/json',
         },
+        body: JSON.stringify({
+          text: 'test comment',
+        }),
       }
     )
       .then((response) => response.json())
@@ -107,7 +113,7 @@ const Docs = () => {
                 Get all comments of every blogs using this api.
                 <br />
                 At first it returns an empty array because you should{' '}
-                <span className={styles.highlight}>add </span>
+                <span className={styles.highlight}>send </span>
                 comments according to what has been said{' '}
                 <span className={styles.highlight}>
                   <a href="#">below</a>
@@ -131,20 +137,11 @@ const Docs = () => {
                 <span className={styles.highlight}>flag</span> of true.
               </CodeTemplate>
               <CodeTemplate
-                text={getBlogById}
+                text={sendComment}
                 title="Send comment"
                 id="send-comment"
               >
-                You sent request to get all blogs but an empty array returned?
-                that's OK! blogs should be created first using this api. for
-                creating blogs send a{' '}
-                <span className={styles.highlight}>POST</span> request that its
-                body is a <span className={styles.highlight}>FormData </span>
-                containing{' '}
-                <span className={styles.highlight}>
-                  title, text, image and tags
-                </span>
-                .
+                To send comments to a blog you need ID of that blog.
               </CodeTemplate>
               <CodeTemplate
                 text={getBlogById}
