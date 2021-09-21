@@ -92,6 +92,17 @@ const getAllBlogs = [
     .then((json) => console.log(json))`,
 ];
 
+const getBlogById = [
+  `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
+    headers: {
+      Authorization:
+        'Bearer <your token>',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
 export {
   getAllFakeBlogs,
   getFakeBlogById,
@@ -102,4 +113,5 @@ export {
   register,
   login,
   getAllBlogs,
+  getBlogById,
 };
