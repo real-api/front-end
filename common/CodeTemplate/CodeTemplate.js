@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader';
 
 import styles from './CodeTemplate.module.css';
 
-const CodeTemplate = ({ text, title, id }) => {
+const CodeTemplate = ({ text, title, id, children }) => {
   const [data, setData] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -26,13 +26,14 @@ const CodeTemplate = ({ text, title, id }) => {
       <Highlight className={`javascript ${styles.highlight}`}>
         {text[0]}
       </Highlight>
-      <button onClick={execute}>Try it</button>
+      {text[1] && <button onClick={execute}>Try it</button>}
       {loading && <Loader />}
       {data && (
         <Highlight className={`JSON ${styles.highlight}`}>
           {`${JSON.stringify(data, null, 2)}`}
         </Highlight>
       )}
+      {children && <p>{children}</p>}
     </div>
   );
 };

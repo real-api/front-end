@@ -5,10 +5,12 @@ import styles from './Sidebar.module.css';
 const Sidebar = () => {
   return (
     <aside className={styles.container}>
-      <h3 className={styles.headerItem}>Fake API</h3>
+      <h3 className={styles.headerItem}>
+        <a href="#blogs">Fake API</a>
+      </h3>
       <ul className={styles.firstUl}>
         <li className={styles.headerItem}>
-          <a href="#blogs">Blogs</a>
+          <a href="#blogs">Fake Blogs</a>
         </li>
         <li className={styles.item}>
           <a href="#get-all-fake-blogs">Get all fake blogs</a>
@@ -22,7 +24,7 @@ const Sidebar = () => {
       </ul>
       <ul>
         <li className={styles.headerItem}>
-          <a href="#comments">Comments</a>
+          <a href="#comments">Fake Comments</a>
         </li>
         <li className={styles.item}>
           <a href="#get-all-fake-comments">Get all fake comments</a>
@@ -34,11 +36,19 @@ const Sidebar = () => {
           <a href="#delete-fake-comment-by-id">Delete fake comment by ID</a>
         </li>
       </ul>
-      <h3 className={styles.headerItem}>Real API</h3>
+      <h3 className={styles.headerItem}>
+        <a href="#authentication">Real API</a>
+      </h3>
       <ul className={styles.firstUl}>
-        <li className={styles.headerItem}>Authentication</li>
-        <li className={styles.item}>Register</li>
-        <li className={styles.item}>Login</li>
+        <li className={styles.headerItem}>
+          <a href="#authentication">Authentication</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#register">Register</a>
+        </li>
+        <li className={styles.item}>
+          <a href="">Login</a>
+        </li>
       </ul>
     </aside>
   );

@@ -12,6 +12,7 @@ import {
   getAllFakeComments,
   getFakeBlogById,
   getFakeCommentById,
+  register,
 } from '../../constant/code';
 
 import styles from './index.module.css';
@@ -29,10 +30,12 @@ const Docs = () => {
             <section className={styles.docsSection}>
               <h2 className={styles.header}>How to use it?</h2>
               <p>
-                fakeStoreApi can be used with any type of shopping project that
-                needs products, carts, and users in JSON format. you can use
-                examples below to check how fakeStoreApi works and feel free to
-                enjoy it in your awesome projects!
+                We provided two types of api for you (fake and real). using fake
+                api is very simple and need no authorization, this type is the
+                best choice to working with if you start using api recently. But
+                the intersting part is the real api where we deal with lots of
+                data, notice that using this kind of api needs authorization but
+                dont worry, there is a fully explained document below &hearts;
               </p>
             </section>
             <section className={styles.docsSection}>
@@ -74,6 +77,19 @@ const Docs = () => {
                 title="Delete fake comment by ID"
                 id="delete-fake-comment-by-id"
               />
+            </section>
+            <section className={styles.docsSection}>
+              <h2 id="authentication" className={styles.header}>
+                Authentication
+              </h2>
+              <CodeTemplate text={register} title="Register" id="register">
+                You forgot to include the json property that contains the data
+                you want to send. However, I the body is not being treated
+                correctly anyway. See this fiddle to see that the delay of 5
+                seconds gets skipped. jsfiddle.net/99arsnkg Also, when you try
+                to add additional headers, they are ignored. This is probably an
+                issue with fetch() itself
+              </CodeTemplate>
             </section>
           </main>
         </div>
