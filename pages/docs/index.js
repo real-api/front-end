@@ -6,6 +6,7 @@ import Footer from '../../common/Layout/Footer/Footer';
 import CodeTemplate from '../../common/CodeTemplate/CodeTemplate';
 
 import {
+  deleteBlogById,
   deleteFakeBlogById,
   deleteFakeCommentById,
   getAllBlogs,
@@ -38,14 +39,12 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/api/panel/blogs/', {
-      method: 'POST',
+    fetch('http://localhost:3300/api/panel/blogs/6149c463f939b67c123aaa7e', {
+      method: 'DELETE',
       headers: {
         Authorization:
           'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
-        'Content-Type': 'multipart/form-data',
       },
-      body: { name: 'Milad' },
     })
       .then((response) => response.json())
       .then((json) => console.log(json))
@@ -138,6 +137,16 @@ const Docs = () => {
                 You can also <span className={styles.highlight}>update</span>{' '}
                 all or one of the blogs data. notice that this is{' '}
                 <span className={styles.highlight}>PATCH</span> request.
+              </CodeTemplate>
+              <CodeTemplate
+                text={deleteBlogById}
+                title="Delete blog"
+                id="delete-blog"
+              >
+                Add the <span className={styles.highlight}>blog ID</span> to the
+                end of the <span className={styles.highlight}>URL</span> and
+                send a <span className={styles.highlight}>DELETE</span> request
+                to delete a specific blog.
               </CodeTemplate>
             </section>
           </main>

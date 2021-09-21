@@ -84,8 +84,7 @@ const login = [
 const getAllBlogs = [
   `fetch('${BASE_URL}/api/panel/blogs', {
     headers: {
-      Authorization:
-        'Bearer <your token>',
+      Authorization: 'Bearer <your token>',
     },
   })
     .then((response) => response.json())
@@ -95,8 +94,18 @@ const getAllBlogs = [
 const getBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     headers: {
-      Authorization:
-        'Bearer <your token>',
+      Authorization: 'Bearer <your token>',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
+const deleteBlogById = [
+  `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer <your token>',
     },
   })
     .then((response) => response.json())
@@ -114,4 +123,5 @@ export {
   login,
   getAllBlogs,
   getBlogById,
+  deleteBlogById,
 };
