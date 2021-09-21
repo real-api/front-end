@@ -6,6 +6,7 @@ import Footer from '../../common/Layout/Footer/Footer';
 import CodeTemplate from '../../common/CodeTemplate/CodeTemplate';
 
 import {
+  confirmComment,
   deleteBlogById,
   deleteFakeBlogById,
   deleteFakeCommentById,
@@ -19,6 +20,7 @@ import {
   getFakeCommentById,
   login,
   register,
+  replyComment,
   sendComment,
 } from '../../constant/code';
 
@@ -42,20 +44,14 @@ const Docs = () => {
     //   .post('http://localhost:3300/auth/register', body, { headers })
     //   .then((response) => console.log(response))
     //   .catch((err) => console.log(err.response));
-    fetch(
-      'http://localhost:3300/api/panel/comments/6149c50df939b67c123aaaa1/',
-      {
-        method: 'POST',
-        headers: {
-          Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
-          'Content-Type': 'Application/json',
-        },
-        body: JSON.stringify({
-          text: 'test comment',
-        }),
-      }
-    )
+    fetch('http://localhost:3300/api/panel/comments/614a2e14179883ab91267530', {
+      method: 'PATCH',
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
+        'Content-Type': 'Application/json',
+      },
+    })
       .then((response) => response.json())
       .then((json) => console.log(json))
       .catch((err) => console.log(err.response));
@@ -103,7 +99,7 @@ const Docs = () => {
             <RealBlogs />
             <section className={styles.docsSection}>
               <h2 id="real-blogs" className={styles.header}>
-                Real Commeents
+                Real Comments
               </h2>
               <CodeTemplate
                 text={getAllComments}
@@ -141,16 +137,31 @@ const Docs = () => {
                 title="Send comment"
                 id="send-comment"
               >
-                To send comments to a blog you need ID of that blog.
+                To send comments to a blog you need
+                <span className={styles.highlight}> ID</span> of that blog.
               </CodeTemplate>
               <CodeTemplate
-                text={getBlogById}
-                title="Remove comment"
-                id="update-blog"
+                text={replyComment}
+                title="Reply comment"
+                id="reply-comment"
               >
-                You can also <span className={styles.highlight}>update</span>{' '}
-                all or one of the blogs data. notice that this is{' '}
-                <span className={styles.highlight}>PATCH</span> request.
+                You also can <span className={styles.highlight}>reply</span> to
+                a comment just like the example. <br />
+                Each reply should be{' '}
+                <span className={styles.highlight}>confirmed</span>
+              </CodeTemplate>
+              <CodeTemplate
+                text={confirmComment}
+                title="Confirm comment"
+                id="confirm-comment"
+              >
+                Each comment should be{' '}
+                <span className={styles.highlight}>confirmed</span> to turn its{' '}
+                <span className={styles.highlight}>flag</span> to true. <br />
+                Only comments with{' '}
+                <span className={styles.highlight}>flag</span> of{' '}
+                <span className={styles.highlight}>true</span> will be returned
+                in response of a specific blog's comments.
               </CodeTemplate>
             </section>
           </main>

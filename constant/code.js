@@ -61,7 +61,7 @@ const register = [
     body: JSON.stringify({
       name: <your name>,
       email: <your email>,
-    }),
+    })
   })
   .then((response) => response.json())
   .then((json) => console.log(json))`,
@@ -74,7 +74,7 @@ const login = [
     body: JSON.stringify({
       email: <your email>,
       password: <your password>,
-    }),
+    })
   })
   .then((response) => response.json())
   .then((json) => console.log(json))`,
@@ -85,7 +85,7 @@ const getAllBlogs = [
   `fetch('${BASE_URL}/api/panel/blogs', {
     headers: {
       'Authorization': 'Bearer <your token>',
-    },
+    }
   })
     .then((response) => response.json())
     .then((json) => console.log(json))`,
@@ -95,7 +95,7 @@ const getBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     headers: {
       'Authorization': 'Bearer <your token>',
-    },
+    }
   })
     .then((response) => response.json())
     .then((json) => console.log(json))`,
@@ -106,7 +106,7 @@ const deleteBlogById = [
     method: 'DELETE',
     headers: {
       'Authorization': 'Bearer <your token>',
-    },
+    }
   })
     .then((response) => response.json())
     .then((json) => console.log(json))`,
@@ -117,7 +117,7 @@ const getAllComments = [
   `fetch('${BASE_URL}/api/panel/comments', {
     headers: {
       'Authorization': 'Bearer <your token>',
-    },
+    }
   })
     .then((response) => response.json())
     .then((json) => console.log(json))`,
@@ -127,7 +127,7 @@ const getBlogComments = [
   `fetch('${BASE_URL}/api/panel/comments/<blog_id>/blog', {
     headers: {
       'Authorization': 'Bearer <your token>',
-    },
+    }
   })
     .then((response) => response.json())
     .then((json) => console.log(json))`,
@@ -143,7 +143,38 @@ const sendComment = [
       },
       body: JSON.stringify({
         text: 'test comment',
-      }),
+      })
+    }
+  )
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
+const replyComment = [
+  `fetch('http://localhost:3300/api/panel/comments/?parent=<parent_comment_id>',
+    {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer <token>',
+        'Content-Type': 'Application/json',
+      },
+      body: JSON.stringify({
+        text: 'reply comment',
+      })
+    }
+  )
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
+const confirmComment = [
+  `fetch('http://localhost:3300/api/panel/comments/<comment_id>',
+    {
+      method: 'PATCH',
+      headers: {
+        'Authorization': 'Bearer <token>',
+        'Content-Type': 'Application/json',
+      }
     }
   )
     .then((response) => response.json())
@@ -165,4 +196,6 @@ export {
   getAllComments,
   getBlogComments,
   sendComment,
+  replyComment,
+  confirmComment,
 };
