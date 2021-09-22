@@ -247,7 +247,7 @@ const RealBlogs = () => {
 
 const RealComments = () => {
   return (
-    <section className={styles.docsSection}>
+    <section className={`${styles.docsSection} ${styles.lastSection}`}>
       <h2 id="real-comments" className={styles.header}>
         Real Comments
       </h2>

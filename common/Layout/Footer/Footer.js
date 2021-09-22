@@ -47,9 +47,9 @@ const Footer = () => {
     <FooterDiv>
       <p>
         <span className="text">
-          Made with <span>&nbsp;♥&nbsp;</span> by
+          Made with <span>♥</span> by
         </span>{' '}
-        &nbsp; <span>E</span>rfan &<span> M</span>ilad
+        <span> M</span>ilad & <span>E</span>rfan
       </p>
       <CoffeeDiv>
         <img src="/assets/images/coffee.svg" alt="coffee icon" />

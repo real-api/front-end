@@ -45,6 +45,10 @@
   font-weight: bold;
 }
 
+.lastSection {
+  margin-bottom: 80px;
+}
+
 @media (min-width: 768px) and (max-width: 1200px) {
   .contentContainer {
     padding-left: 100px;
