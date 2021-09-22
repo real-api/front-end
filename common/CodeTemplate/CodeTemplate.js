@@ -26,6 +26,7 @@ const CodeTemplate = ({ text, title, id, children }) => {
       <Highlight className={`javascript ${styles.highlight}`}>
         {text[0]}
       </Highlight>
+      <span className={styles.requestType}>GET</span>
       {text[1] && <button onClick={execute}>Try it</button>}
       {loading && <Loader />}
       {data && (

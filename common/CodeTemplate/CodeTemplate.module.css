@@ -4,6 +4,7 @@
   width: 100%;
   margin-top: 50px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .highlight {
@@ -17,7 +18,7 @@
 .header {
   color: #1565df;
   font-size: 1.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .docsHeader {
@@ -51,6 +52,18 @@
 .container p {
   margin-top: 20px;
   font-size: 1.1rem;
+}
+
+.requestType {
+  position: absolute;
+  color: #fff;
+  top: 23px;
+  padding: 3px 10px 0;
+  right: 0px;
+  background-color: #1c1d21;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 3px;
 }
 
 @media (max-width: 768px) {
