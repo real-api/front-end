@@ -56,7 +56,6 @@
 
 .requestType {
   position: absolute;
-  color: #fff;
   top: 23px;
   padding: 3px 10px 0;
   right: 0px;
@@ -64,6 +63,23 @@
   font-weight: bold;
   font-size: 1.1rem;
   border-radius: 3px;
+  border-bottom-right-radius: 0;
+}
+
+.GET {
+  color: #3b82f6;
+}
+
+.DELETE {
+  color: #ef4444;
+}
+
+.POST {
+  color: #84cc16;
+}
+
+.PATCH {
+  color: #eab308;
 }
 
 @media (max-width: 768px) {

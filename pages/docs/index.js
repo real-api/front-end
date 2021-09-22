@@ -132,16 +132,19 @@ const FakeBlogs = () => {
         text={getAllFakeBlogs}
         title="Get all fake blogs"
         id="get-all-fake-blogs"
+        type="GET"
       />
       <CodeTemplate
         text={getFakeBlogById}
         title="Get fake blog by ID"
         id="get-fake-blog-by-id"
+        type="GET"
       />
       <CodeTemplate
         text={deleteFakeBlogById}
         title="Delete fake blog by ID"
         id="delete-fake-blog-by-id"
+        type="DELETE"
       />
     </section>
   );
@@ -157,16 +160,19 @@ const FakeComments = () => {
         text={getAllFakeComments}
         title="Get all fake comments"
         id="get-all-fake-comments"
+        type="GET"
       />
       <CodeTemplate
         text={getFakeCommentById}
         title="Get fake comment by ID"
         id="get-fake-comment-by-id"
+        type="GET"
       />
       <CodeTemplate
         text={deleteFakeCommentById}
         title="Delete fake comment by ID"
         id="delete-fake-comment-by-id"
+        type="DELETE"
       />
     </section>
   );
@@ -178,7 +184,7 @@ const Authorization = () => {
       <h2 id="authentication" className={styles.header}>
         Authentication
       </h2>
-      <CodeTemplate text={register} title="Register" id="register">
+      <CodeTemplate text={register} title="Register" id="register" type="POST">
         Welcome, here is the first step for using real api, you need to register
         and then your <span className={styles.highlight}>token</span> and{' '}
         <span className={styles.highlight}>password</span> will be sent to your
@@ -187,7 +193,7 @@ const Authorization = () => {
         <span className={styles.highlight}>password</span> for login according
         to what is said below.
       </CodeTemplate>
-      <CodeTemplate text={login} title="Login" id="login">
+      <CodeTemplate text={login} title="Login" id="login" type="POST">
         In this section, you can log in using the{' '}
         <span className={styles.highlight}>password</span> that was emailed to
         you and get your <span className={styles.highlight}>token</span>.
@@ -202,7 +208,12 @@ const RealBlogs = () => {
       <h2 id="real-blogs" className={styles.header}>
         Real Blogs
       </h2>
-      <CodeTemplate text={getAllBlogs} title="Get all blogs" id="get-all-blogs">
+      <CodeTemplate
+        text={getAllBlogs}
+        title="Get all blogs"
+        id="get-all-blogs"
+        type="GET"
+      >
         A simple <span className={styles.highlight}>GET</span> request, just
         need your <span className={styles.highlight}>token</span> in header when
         sending request and then you get all created blogs.
@@ -217,12 +228,18 @@ const RealBlogs = () => {
         text={getBlogById}
         title="Get blog by ID"
         id="get-blog-by-id"
+        type="GET"
       >
         To get a specific blog add that{' '}
         <span className={styles.highlight}>blog's ID</span> as an endpoint to{' '}
         <span className={styles.highlight}>URL</span>
       </CodeTemplate>
-      <CodeTemplate text={getBlogById} title="Create blog" id="create-blog">
+      <CodeTemplate
+        text={getBlogById}
+        title="Create blog"
+        id="create-blog"
+        type="POST"
+      >
         You sent request to get all blogs but an empty array returned? that's
         OK! blogs should be created first using this api. for creating blogs
         send a <span className={styles.highlight}>POST</span> request that its
@@ -230,12 +247,22 @@ const RealBlogs = () => {
         containing{' '}
         <span className={styles.highlight}>title, text, image and tags</span>.
       </CodeTemplate>
-      <CodeTemplate text={getBlogById} title="Update blog" id="update-blog">
+      <CodeTemplate
+        text={getBlogById}
+        title="Update blog"
+        id="update-blog"
+        type="PATCH"
+      >
         You can also <span className={styles.highlight}>update</span> all or one
         of the blogs data. notice that this is{' '}
         <span className={styles.highlight}>PATCH</span> request.
       </CodeTemplate>
-      <CodeTemplate text={deleteBlogById} title="Delete blog" id="delete-blog">
+      <CodeTemplate
+        text={deleteBlogById}
+        title="Delete blog"
+        id="delete-blog"
+        type="DELETE"
+      >
         Add the <span className={styles.highlight}>blog ID</span> to the end of
         the <span className={styles.highlight}>URL</span> and send a{' '}
         <span className={styles.highlight}>DELETE</span> request to delete a
@@ -255,6 +282,7 @@ const RealComments = () => {
         text={getAllComments}
         title="Get all comments"
         id="get-all-comments"
+        type="GET"
       >
         Get all comments of every blogs using this api.
         <br />
@@ -270,6 +298,7 @@ const RealComments = () => {
         text={getBlogComments}
         title="Get blog comments"
         id="get-blog-comments"
+        type="GET"
       >
         To get comments of a specific blog use this one.
         <br />
@@ -282,7 +311,12 @@ const RealComments = () => {
         , actually it only returns comments with{' '}
         <span className={styles.highlight}>flag</span> of true.
       </CodeTemplate>
-      <CodeTemplate text={sendComment} title="Send comment" id="send-comment">
+      <CodeTemplate
+        text={sendComment}
+        title="Send comment"
+        id="send-comment"
+        type="POST"
+      >
         To send comments to a blog you need
         <span className={styles.highlight}> ID</span> of that blog.
       </CodeTemplate>
@@ -290,6 +324,7 @@ const RealComments = () => {
         text={replyComment}
         title="Reply comment"
         id="reply-comment"
+        type="POST"
       >
         You also can <span className={styles.highlight}>reply</span> to a
         comment just like the example. <br />
@@ -299,6 +334,7 @@ const RealComments = () => {
         text={confirmComment}
         title="Confirm comment"
         id="confirm-comment"
+        type="PATCH"
       >
         Each comment should be{' '}
         <span className={styles.highlight}>confirmed</span> to turn its{' '}
@@ -312,6 +348,7 @@ const RealComments = () => {
         text={deleteComment}
         title="Delete comment"
         id="delete-comment"
+        type="DELETE"
       >
         Send a <span className={styles.highlight}>DELETE</span> request to
         remove a specific comment

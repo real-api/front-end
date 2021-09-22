@@ -22,7 +22,7 @@ export default function Home() {
         </Head>
         <Banner />
         <section className={styles.container}>
-          <CodeTemplate text={getAllFakeBlogs} />
+          <CodeTemplate text={getAllFakeBlogs} type="GET" />
         </section>
         <section className={styles.container}>
           <ApiView
