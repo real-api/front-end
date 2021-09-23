@@ -1,7 +1,7 @@
 const HomePageResources = [
   {
     key: {
-      amount: 'Products',
+      amount: 'Fake API',
       link: 'https://fakestoreapi.com/products',
     },
     value: { amount: '20 products', isActive: false, link: '' },
@@ -9,7 +9,7 @@ const HomePageResources = [
   },
   {
     key: {
-      amount: 'Products',
+      amount: 'Authentication',
       link: 'https://fakestoreapi.com/products',
     },
     value: { amount: '20 products', isActive: false, link: '' },
@@ -17,7 +17,7 @@ const HomePageResources = [
   },
   {
     key: {
-      amount: 'Products',
+      amount: 'Blogs',
       link: 'https://fakestoreapi.com/products',
     },
     value: { amount: '20 products', isActive: false, link: '' },
@@ -25,7 +25,7 @@ const HomePageResources = [
   },
   {
     key: {
-      amount: 'Products',
+      amount: 'Comments',
       link: 'https://fakestoreapi.com/products',
     },
     value: { amount: '20 products', isActive: false, link: '' },
