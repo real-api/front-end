@@ -20,6 +20,30 @@ const getFakeBlogById = [
     .then(res => res.json())`,
 ];
 
+const postFakeBlog = [
+  `fetch('${BASE_URL}/blogs/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      text: "test text",
+      title: "test title",
+      tags: "tags1,tag2,tag3",
+    })
+  })
+    .then(res => res.json())
+    .then(json => console.log(json))`,
+  `fetch('${BASE_URL}/blogs/',{
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      text: "test text",
+      title: "test title",
+      tags: "tags1,tag2,tag3",
+    })
+  })
+    .then(res => res.json())`,
+];
+
 const deleteFakeBlogById = [
   `fetch('${BASE_URL}/blogs/613e4f660d6ff89175fb6fa5', {method: 'DELETE'})
     .then(res => res.json())
@@ -197,6 +221,7 @@ const deleteComment = [
 export {
   getAllFakeBlogs,
   getFakeBlogById,
+  postFakeBlog,
   deleteFakeBlogById,
   getAllFakeComments,
   getFakeCommentById,
