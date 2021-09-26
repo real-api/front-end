@@ -21,6 +21,7 @@ import {
   getFakeCommentById,
   login,
   postFakeBlog,
+  postFakeComment,
   register,
   replyComment,
   sendComment,
@@ -174,6 +175,12 @@ const FakeComments = () => {
         title="Get fake comment by ID"
         id="get-fake-comment-by-id"
         type="GET"
+      />
+      <CodeTemplate
+        text={postFakeComment}
+        title="Post fake comment"
+        id="post-fake-comment"
+        type="POST"
       />
       <CodeTemplate
         text={deleteFakeCommentById}

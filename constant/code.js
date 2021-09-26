@@ -69,6 +69,26 @@ const getFakeCommentById = [
   .then(res => res.json())`,
 ];
 
+const postFakeComment = [
+  `fetch('${BASE_URL}/comments', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      text: "test text"
+    })
+  })
+    .then(res => res.json())
+    .then(json => console.log(json))`,
+  `fetch('${BASE_URL}/comments',{
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      text: "test text"
+    })
+  })
+    .then(res => res.json())`,
+];
+
 const deleteFakeCommentById = [
   `fetch('${BASE_URL}/comments/613e50cb0d6ff89175fb6fce', {method: 'DELETE'})
       .then(res => res.json())
@@ -225,6 +245,7 @@ export {
   deleteFakeBlogById,
   getAllFakeComments,
   getFakeCommentById,
+  postFakeComment,
   deleteFakeCommentById,
   register,
   login,
