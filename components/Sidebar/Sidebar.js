@@ -19,6 +19,9 @@ const Sidebar = () => {
           <a href="#get-fake-blog-by-id">Get fake blog by ID</a>
         </li>
         <li className={styles.item}>
+          <a href="#post-fake-blog">Post fake blog</a>
+        </li>
+        <li className={styles.item}>
           <a href="#delete-fake-blog-by-id">Delete fake blog by ID</a>
         </li>
       </ul>
@@ -31,6 +34,9 @@ const Sidebar = () => {
         </li>
         <li className={styles.item}>
           <a href="#get-fake-comment-by-id">Get fake comment by ID</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#post-fake-comment">Post fake comment</a>
         </li>
         <li className={styles.item}>
           <a href="#delete-fake-comment-by-id">Delete fake comment by ID</a>
