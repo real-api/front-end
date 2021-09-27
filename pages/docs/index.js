@@ -97,7 +97,7 @@ const Docs = () => {
             <Banner />
             <FakeBlogs />
             <FakeComments />
-            <Authorization />
+            <Authentication />
             <RealBlogs />
             <RealComments />
           </main>
@@ -114,10 +114,10 @@ const Banner = () => {
       <h2 className={styles.header}>How to use it?</h2>
       <p>
         We provided two types of api for you (fake and real). using fake api is
-        very simple and need no authorization, this type is the best choice to
+        very simple and need no authentication, this type is the best choice to
         working with if you start using api recently. But the intersting part is
         the real api where we deal with lots of data, notice that using this
-        kind of api needs authorization but dont worry, there is a fully
+        kind of api needs authentication but dont worry, there is a fully
         explained document below &hearts;
       </p>
     </section>
@@ -192,7 +192,7 @@ const FakeComments = () => {
   );
 };
 
-const Authorization = () => {
+const Authentication = () => {
   return (
     <section className={styles.docsSection}>
       <h2 id="authentication" className={styles.header}>

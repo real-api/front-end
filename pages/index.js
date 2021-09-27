@@ -16,7 +16,7 @@ export default function Home() {
     <Layout>
       <main className={styles.mainContainer}>
         <Head>
-          <title>ME API</title>
+          <title>Free Real API</title>
           <meta name="description" content="A real api" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -47,7 +47,7 @@ const Banner = () => {
   return (
     <section className={styles.container}>
       <div className={styles.textContainer}>
-        <h1>ME API</h1>
+        <h1>Free Real API</h1>
         <p>
           {' '}
           Fake store rest API for your e-commerce or shopping website prototype
