@@ -45,6 +45,10 @@
   font-weight: bold;
 }
 
+.warning {
+  color: crimson;
+}
+
 .lastSection {
   margin-bottom: 80px;
 }

@@ -206,6 +206,10 @@ const Authentication = () => {
         <span className={styles.highlight}>token</span> for next requests and{' '}
         <span className={styles.highlight}>password</span> for login according
         to what is said below.
+        <br />
+        <span className={styles.warning}>
+          - If you have not received an email, be sure to check the Spam.
+        </span>
       </CodeTemplate>
       <CodeTemplate text={login} title="Login" id="login" type="POST">
         In this section, you can log in using the{' '}
