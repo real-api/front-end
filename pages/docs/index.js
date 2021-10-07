@@ -20,6 +20,7 @@ import {
   getFakeBlogById,
   getFakeCommentById,
   login,
+  postBlog,
   postFakeBlog,
   postFakeComment,
   register,
@@ -30,60 +31,36 @@ import {
 import styles from './index.module.css';
 
 import axios from 'axios';
-import image from '../../public/assets/images/bnbwallet.jpg';
 
 const Docs = () => {
   const [file, setFile] = useState('');
-  const body = {
-    name: 'milad',
-    email: 'asdasdm@gmail.com',
-  };
-  const headers = {
-    'Content-Type': 'application/json',
+
+  const fileHandler = (e) => {
+    console.log(e.target.files[0]);
+    setFile(e.target.files[0]);
   };
 
-  useEffect(() => {
-    // axios
-    //   .post('http://localhost:3300/auth/register', body, { headers })
-    //   .then((response) => console.log(response))
-    //   .catch((err) => console.log(err.response));
-    fetch('http://localhost:3300/api/panel/comments/614a2e9c179883ab9126753b', {
-      method: 'DELETE',
-      headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json))
+  const clickHandler = () => {
+    const data = new FormData();
+    data.append('title', 'test title');
+    data.append('text', 'test text');
+    data.append('image', file);
+    data.append('tags', 'one,two,three');
+    const BearerToken =
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTMxNzRiODI2MDhkZDRlNTZkNzY0ZSIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzM1OTY2NTAsImV4cCI6MTYzNTMxNjY0NzU1N30.1yvNn7xkJ27rhGWSnsXcl3psbtUxPqWy1KVSHiMHuyg';
+    axios
+      .post('http://localhost:3300/api/panel/blogs/', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: BearerToken,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        return response;
+      })
       .catch((err) => console.log(err.response));
-  }, []);
-
-  // const fileHandler = (e) => {
-  //   console.log(e.target.files[0]);
-  //   setFile(e.target.files[0]);
-  // };
-
-  // const clickHandler = () => {
-  //   console.log(file);
-  //   const data = new FormData();
-  //   data.append('title', 'test title');
-  //   data.append('text', 'test text');
-  //   data.append('image', file);
-  //   data.append('tags', 'one,two,three');
-  //   fetch('http://localhost:3300/api/panel/blogs/', {
-  //     method: 'POST',
-  //     headers: {
-  //       Authorization:
-  //         'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIyMjM1OTgsImV4cCI6MTYzMzk0MjIyMjA2Mn0.JsUB2qXfTV0YbUJY30dVlBLsgtEKgQjIJvrfRM1BrW0',
-  //       'Content-Type': 'multipart/form-data',
-  //     },
-  //     body: data,
-  //   })
-  //     .then((response) => response.json())
-  //     .then((json) => console.log(json))
-  //     .catch((err) => console.log(err.response));
-  // };
+  };
 
   return (
     <>
@@ -94,6 +71,10 @@ const Docs = () => {
             <Header />
           </nav>
           <main className={styles.contentContainer}>
+            <input type="file" onChange={fileHandler} />
+            <button type="submit" onClick={clickHandler}>
+              Send
+            </button>
             <Banner />
             <FakeBlogs />
             <FakeComments />
@@ -235,10 +216,13 @@ const RealBlogs = () => {
         A simple <span className={styles.highlight}>GET</span> request, just
         need your <span className={styles.highlight}>token</span> in header when
         sending request and then you get all created blogs.
-        <br /> At first it returns an empty array because you should add blogs
-        according to what has been said{' '}
-        <span className={styles.highlight}>
-          <a href="#">below</a>
+        <br />
+        <span className={styles.warning}>
+          - At first it returns an empty array because you should create blogs
+          according to what has been said{' '}
+          <span className={styles.highlight}>
+            <a href="#create-blog">below</a>
+          </span>
         </span>
         .
       </CodeTemplate>
@@ -251,19 +235,32 @@ const RealBlogs = () => {
         To get a specific blog add that{' '}
         <span className={styles.highlight}>blog's ID</span> as an endpoint to{' '}
         <span className={styles.highlight}>URL</span>
+        <br />
+        <span className={styles.warning}>
+          - At first it returns an empty array because you should create blogs
+          according to what has been said{' '}
+          <span className={styles.highlight}>
+            <a href="#create-blog">below</a>
+          </span>
+        </span>
       </CodeTemplate>
       <CodeTemplate
-        text={getBlogById}
+        text={postBlog}
         title="Create blog"
         id="create-blog"
         type="POST"
       >
-        You sent request to get all blogs but an empty array returned? that's
-        OK! blogs should be created first using this api. for creating blogs
-        send a <span className={styles.highlight}>POST</span> request that its
-        body is a <span className={styles.highlight}>FormData </span>
-        containing{' '}
-        <span className={styles.highlight}>title, text, image and tags</span>.
+        You should post a <span className={styles.highlight}>formData</span> to
+        create a blog, each blog contains{' '}
+        <span className={styles.highlight}>title</span>,{' '}
+        <span className={styles.highlight}>text</span>,{' '}
+        <span className={styles.highlight}>tags</span>(which is seperated by
+        comma) and an <span className={styles.highlight}>image</span>. take the
+        image file through an input with type of file.
+        <br />
+        <span className={styles.warning}>
+          - For posting files use <span className={styles.highlight}>axios</span>
+        </span>
       </CodeTemplate>
       <CodeTemplate
         text={getBlogById}

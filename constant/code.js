@@ -145,6 +145,24 @@ const getBlogById = [
     .then((json) => console.log(json))`,
 ];
 
+const postBlog = [
+  `const data = new FormData();
+  data.append('title', 'test title');
+  data.append('text', 'test text');
+  data.append('image', file);
+  data.append('tags', 'one,two,three');
+  const BearerToken =
+    'Bearer <your token>';
+  axios.post('${BASE_URL}/api/panel/blogs/', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: BearerToken,
+      },
+    })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
 const deleteBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     method: 'DELETE',
@@ -251,6 +269,7 @@ export {
   login,
   getAllBlogs,
   getBlogById,
+  postBlog,
   deleteBlogById,
   getAllComments,
   getBlogComments,

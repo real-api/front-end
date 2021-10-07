@@ -49,6 +49,11 @@
   color: crimson;
 }
 
+.warning .highlight {
+  font-weight: bold;
+  color: crimson;
+}
+
 .lastSection {
   margin-bottom: 80px;
 }
