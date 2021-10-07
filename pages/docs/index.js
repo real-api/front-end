@@ -26,6 +26,7 @@ import {
   register,
   replyComment,
   sendComment,
+  updateBlog,
 } from '../../constant/code';
 
 import styles from './index.module.css';
@@ -42,19 +43,23 @@ const Docs = () => {
 
   const clickHandler = () => {
     const data = new FormData();
-    data.append('title', 'test title');
-    data.append('text', 'test text');
+    data.append('title', 'soran2 title');
+    data.append('text', 'soran2 text');
     data.append('image', file);
     data.append('tags', 'one,two,three');
     const BearerToken =
       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTMxNzRiODI2MDhkZDRlNTZkNzY0ZSIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzM1OTY2NTAsImV4cCI6MTYzNTMxNjY0NzU1N30.1yvNn7xkJ27rhGWSnsXcl3psbtUxPqWy1KVSHiMHuyg';
     axios
-      .post('http://localhost:3300/api/panel/blogs/', data, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: BearerToken,
-        },
-      })
+      .patch(
+        'http://localhost:3300/api/panel/blogs/615ebad0eac9ec62f40a81b4',
+        data,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: BearerToken,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         return response;
@@ -259,17 +264,18 @@ const RealBlogs = () => {
         image file through an input with type of file.
         <br />
         <span className={styles.warning}>
-          - For posting files use <span className={styles.highlight}>axios</span>
+          - For posting files use{' '}
+          <span className={styles.highlight}>axios</span>
         </span>
       </CodeTemplate>
       <CodeTemplate
-        text={getBlogById}
+        text={updateBlog}
         title="Update blog"
         id="update-blog"
         type="PATCH"
       >
         You can also <span className={styles.highlight}>update</span> all or one
-        of the blogs data. notice that this is{' '}
+        of the blog data. notice that this is{' '}
         <span className={styles.highlight}>PATCH</span> request.
       </CodeTemplate>
       <CodeTemplate

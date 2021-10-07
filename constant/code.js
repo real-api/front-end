@@ -151,12 +151,26 @@ const postBlog = [
   data.append('text', 'test text');
   data.append('image', file);
   data.append('tags', 'one,two,three');
-  const BearerToken =
-    'Bearer <your token>';
   axios.post('${BASE_URL}/api/panel/blogs/', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        Authorization: BearerToken,
+        Authorization: 'Bearer <your token>',
+      },
+    })
+    .then((response) => response.json())
+    .then((json) => console.log(json))`,
+];
+
+const updateBlog = [
+  `const data = new FormData();
+  data.append('title', 'updated title');
+  data.append('text', 'updated text');
+  data.append('image', updated file);
+  data.append('tags', 'four,five,six');
+  axios.patch('${BASE_URL}/api/panel/blogs/<blog_id>', data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: 'Bearer <your token>',
       },
     })
     .then((response) => response.json())
@@ -270,6 +284,7 @@ export {
   getAllBlogs,
   getBlogById,
   postBlog,
+  updateBlog,
   deleteBlogById,
   getAllComments,
   getBlogComments,
