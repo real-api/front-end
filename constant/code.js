@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.freerealapi.comn';
+const BASE_URL = 'https://api.freerealapi.com';
 const TOKEN =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDg3MTQwODkxM2YwMjI1M2JiZmFmZCIsImVtYWlsIjoibWlsYWRhemFtaTEyMEBnbWFpbC5jb20iLCJpYXQiOjE2MzIxMzc1MzYsImV4cCI6MTYzMzg1NjA3NDE0Nn0.G7nrfdIx_TKwGarcbRJ5tHAa-Si6GBib_t_ufMET_G0';
 const PASSWORD = 'cv6SEemUJdOUHH';

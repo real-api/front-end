@@ -22,6 +22,7 @@ export default function Home() {
         <section className={styles.container}>
           <CodeTemplate text={getAllFakeBlogs} type="GET" />
         </section>
+        <Text />
       </main>
     </Layout>
   );
@@ -32,10 +33,7 @@ const Banner = () => {
     <section className={styles.container}>
       <div className={styles.textContainer}>
         <h1>Free Real API</h1>
-        <p>
-          {' '}
-          Fake store rest API for your e-commerce or shopping website prototype
-        </p>
+        <p> Post your blogs and comments to us, we will save it.</p>
         <div className={styles.btns}>
           <Link href="/docs">
             <a className={styles.docsAnchor}>
@@ -69,6 +67,32 @@ const Banner = () => {
           alt="Banner"
         />
       </div>
+    </section>
+  );
+};
+
+const Text = () => {
+  return (
+    <section className={styles.docContainer}>
+      <h2 className={styles.docHeader}>Fake API</h2>
+      <p className={styles.docText}>
+        Two types of APIs are provided, the fake one is very simple and
+        straightforward. they need no authentication and is highly recommended
+        for beginners.
+      </p>
+      <h2 className={styles.docHeader}>Real API</h2>
+      <p className={styles.docText}>
+        Here is the interesting part. for using these APIs you should register
+        or login and get a specific token, this token should be sent in header
+        of each request. All posted data is stored in database, you can post
+        more data, update or remove them but you have some limitations which is
+        explained below.
+      </p>
+      <h2 className={styles.docHeader}>Limitations</h2>
+      <p>- Each user can post and save 10 blogs in database.</p>
+      <p>- Each user can post 20 comments.1</p>
+      <p>- Each user can post 20 requests per minute</p>
+      <p>- Images must be less than 32KB in size.</p>
     </section>
   );
 };

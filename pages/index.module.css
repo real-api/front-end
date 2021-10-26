@@ -15,6 +15,18 @@
   margin-bottom: 100px;
 }
 
+.docContainer {
+  max-width: 1000px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.docContainer p {
+  color: #7b7b7b;
+  text-align: justify;
+  margin: 5px 0;
+}
+
 .textContainer {
   display: flex;
   padding-right: 35px;
@@ -69,6 +81,18 @@
 .coffeeAnchor:hover,
 .docsAnchor:hover {
   transform: scale(1.025);
+}
+
+.docHeader {
+  color: #1565df;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.docText {
+  color: #7b7b7b;
+  margin-bottom: 100px !important;
+  text-align: justify;
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
