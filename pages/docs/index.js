@@ -315,7 +315,7 @@ const RealComments = () => {
         <span className={styles.highlight}>send </span>
         comments according to what has been said{' '}
         <span className={styles.highlight}>
-          <a href="#">below</a>
+          <a href="#send-comment">below</a>
         </span>
         .
       </CodeTemplate>
@@ -331,7 +331,7 @@ const RealComments = () => {
         <span className={styles.highlight}>confirm </span>
         comments according to what has been said{' '}
         <span className={styles.highlight}>
-          <a href="#">below</a>
+          <a href="#send-comment">below</a>
         </span>
         , actually it only returns comments with{' '}
         <span className={styles.highlight}>flag</span> of true.
