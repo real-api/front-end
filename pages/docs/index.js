@@ -277,6 +277,11 @@ const RealBlogs = () => {
         You can also <span className={styles.highlight}>update</span> all or one
         of the blog data. notice that this is{' '}
         <span className={styles.highlight}>PATCH</span> request.
+        <br />
+        <span className={styles.warning}>
+          - For patching files use{' '}
+          <span className={styles.highlight}>axios</span>
+        </span>
       </CodeTemplate>
       <CodeTemplate
         text={deleteBlogById}

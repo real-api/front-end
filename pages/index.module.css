@@ -39,7 +39,7 @@
 }
 
 .docsAnchor,
-.githubAnchor {
+.coffeeAnchor {
   padding: 16px 20px;
   border-radius: 0.25rem;
   display: flex;
@@ -56,13 +56,17 @@
   color: #fff;
 }
 
-.githubAnchor {
+.coffeeAnchor {
   background-color: #93c5fd;
   color: #ffff;
   cursor: pointer;
 }
 
-.githubAnchor:hover,
+.coffeeAnchor img {
+  bottom: 12px !important;
+}
+
+.coffeeAnchor:hover,
 .docsAnchor:hover {
   transform: scale(1.025);
 }

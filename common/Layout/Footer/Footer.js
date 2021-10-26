@@ -40,6 +40,9 @@ const CoffeeDiv = styled.div`
     color: #802c6e;
     font-size: 15px;
   }
+  img {
+    color: red;
+  }
 `;
 
 const Footer = () => {

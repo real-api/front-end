@@ -64,15 +64,17 @@ const Banner = () => {
               />
             </a>
           </Link>
-          <a className={styles.githubAnchor}>
-            View on GitHub
-            <Image
-              height="20"
-              width="20"
-              src="/assets/images/github.svg"
-              alt="book"
-            />
-          </a>
+          <Link href="/donation">
+            <a className={styles.coffeeAnchor}>
+              Buy Me a Coffee
+              <Image
+                height="30"
+                width="30"
+                src="/assets/images/coffee.svg"
+                alt="coffee"
+              />
+            </a>
+          </Link>
         </div>
       </div>
       <div className={styles.bannerImage}>
