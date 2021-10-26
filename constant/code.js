@@ -103,8 +103,9 @@ const register = [
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      name: <your name>,
-      email: <your email>,
+      name: <test name>,
+      email: <test email>,
+      password: <test password>,
     })
   })
   .then((response) => response.json())
@@ -116,8 +117,8 @@ const login = [
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      email: <your email>,
-      password: <your password>,
+      email: <test email>,
+      password: <test password>,
     })
   })
   .then((response) => response.json())
@@ -128,7 +129,7 @@ const login = [
 const getAllBlogs = [
   `fetch('${BASE_URL}/api/panel/blogs', {
     headers: {
-      'Authorization': 'Bearer <your token>',
+      'Authorization': 'Bearer <test token>',
     }
   })
     .then((response) => response.json())
@@ -138,7 +139,7 @@ const getAllBlogs = [
 const getBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     headers: {
-      'Authorization': 'Bearer <your token>',
+      'Authorization': 'Bearer <test token>',
     }
   })
     .then((response) => response.json())
@@ -154,7 +155,7 @@ const postBlog = [
   axios.post('${BASE_URL}/api/panel/blogs/', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        Authorization: 'Bearer <your token>',
+        Authorization: 'Bearer <test token>',
       },
     })
     .then((response) => response.json())
@@ -170,7 +171,7 @@ const updateBlog = [
   axios.patch('${BASE_URL}/api/panel/blogs/<blog_id>', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        Authorization: 'Bearer <your token>',
+        Authorization: 'Bearer <test token>',
       },
     })
     .then((response) => response.json())
@@ -181,7 +182,7 @@ const deleteBlogById = [
   `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
     method: 'DELETE',
     headers: {
-      'Authorization': 'Bearer <your token>',
+      'Authorization': 'Bearer <test token>',
     }
   })
     .then((response) => response.json())
@@ -192,7 +193,7 @@ const deleteBlogById = [
 const getAllComments = [
   `fetch('${BASE_URL}/api/panel/comments', {
     headers: {
-      'Authorization': 'Bearer <your token>',
+      'Authorization': 'Bearer <test token>',
     }
   })
     .then((response) => response.json())
@@ -202,7 +203,7 @@ const getAllComments = [
 const getBlogComments = [
   `fetch('${BASE_URL}/api/panel/comments/<blog_id>/blog', {
     headers: {
-      'Authorization': 'Bearer <your token>',
+      'Authorization': 'Bearer <test token>',
     }
   })
     .then((response) => response.json())

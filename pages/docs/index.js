@@ -76,10 +76,6 @@ const Docs = () => {
             <Header />
           </nav>
           <main className={styles.contentContainer}>
-            <input type="file" onChange={fileHandler} />
-            <button type="submit" onClick={clickHandler}>
-              Send
-            </button>
             <Banner />
             <FakeBlogs />
             <FakeComments />
@@ -186,21 +182,16 @@ const Authentication = () => {
       </h2>
       <CodeTemplate text={register} title="Register" id="register" type="POST">
         Welcome, here is the first step for using real api, you need to register
-        and then your <span className={styles.highlight}>token</span> and{' '}
-        <span className={styles.highlight}>password</span> will be sent to your
-        email (be careful to post a valid email). use{' '}
-        <span className={styles.highlight}>token</span> for next requests and{' '}
-        <span className={styles.highlight}>password</span> for login according
-        to what is said below.
-        <br />
-        <span className={styles.warning}>
-          - If you have not received an email, be sure to check the Spam.
-        </span>
+        and then a <span className={styles.highlight}>token</span> is returned
+        to you. after it, your data is stored in database and next time you
+        should log in with your <span className={styles.highlight}>email</span>{' '}
+        and <span className={styles.highlight}>password</span>.
       </CodeTemplate>
       <CodeTemplate text={login} title="Login" id="login" type="POST">
-        In this section, you can log in using the{' '}
-        <span className={styles.highlight}>password</span> that was emailed to
-        you and get your <span className={styles.highlight}>token</span>.
+        In this section, you can log in using your{' '}
+        <span className={styles.highlight}>email</span> and{' '}
+        <span className={styles.highlight}> password</span>. after login a new
+        <span className={styles.highlight}> token</span> is returned to you.
       </CodeTemplate>
     </section>
   );
