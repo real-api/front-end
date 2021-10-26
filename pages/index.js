@@ -6,10 +6,8 @@ import styles from './index.module.css';
 
 import Layout from '../common/Layout/Layout';
 import CodeTemplate from '../common/CodeTemplate/CodeTemplate';
-import ApiView from '../common/ApiView/ApiView';
 
 import { getAllFakeBlogs } from '../constant/code';
-import { HomePageResources, HomePageRoutes } from '../constant/apiList';
 
 export default function Home() {
   return (
@@ -23,20 +21,6 @@ export default function Home() {
         <Banner />
         <section className={styles.container}>
           <CodeTemplate text={getAllFakeBlogs} type="GET" />
-        </section>
-        <section className={styles.container}>
-          <ApiView
-            title="Resources"
-            description="There are 4 main resources need in shopping prototypes"
-            apiList={HomePageResources}
-          />
-        </section>
-        <section className={styles.container}>
-          <ApiView
-            title="Routes"
-            description="All HTTP methods are supported"
-            apiList={HomePageRoutes}
-          />
         </section>
       </main>
     </Layout>
