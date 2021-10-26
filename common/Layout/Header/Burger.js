@@ -7,7 +7,7 @@ const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: ${({ open }) => (open ? 'fixed' : 'absolute')};
-  top: 30px;
+  top: 40px;
   right: 30px;
   z-index: 20;
   display: none;

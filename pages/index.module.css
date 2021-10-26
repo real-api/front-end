@@ -100,6 +100,10 @@
     padding-left: 100px;
     padding-right: 100px;
   }
+  .docContainer {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1000px) {
@@ -110,6 +114,13 @@
 
 @media (max-width: 768px) {
   .container {
+    flex-direction: column;
+    padding: 50px 30px;
+    padding-bottom: 0;
+    margin-bottom: 50px;
+  }
+
+  .docContainer {
     flex-direction: column;
     padding: 50px 30px;
     padding-bottom: 0;

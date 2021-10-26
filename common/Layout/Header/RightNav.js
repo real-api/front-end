@@ -54,11 +54,6 @@ const RightNav = ({ open }) => {
         <Link href="/docs">Docs</Link>
       </li>
       <li>
-        <a href="#" target="_blank">
-          GitHub
-        </a>
-      </li>
-      <li>
         <Link href="/donation">Buy me a coffee</Link>
       </li>
     </Ul>
