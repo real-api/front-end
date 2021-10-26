@@ -229,7 +229,7 @@ const RealBlogs = () => {
         type="GET"
       >
         To get a specific blog add that{' '}
-        <span className={styles.highlight}>blog's ID</span> as an endpoint to{' '}
+        <span className={styles.highlight}>blog&apos;s ID</span> as an endpoint to{' '}
         <span className={styles.highlight}>URL</span>
         <br />
         <span className={styles.warning}>
@@ -257,7 +257,11 @@ const RealBlogs = () => {
         <span className={styles.warning}>
           - For posting files use{' '}
           <span className={styles.highlight}>
-            <a href="https://www.npmjs.com/package/axios" target="_blank">
+            <a
+              href="https://www.npmjs.com/package/axios"
+              target="_blank"
+              rel="noreferrer"
+            >
               axios
             </a>
           </span>
@@ -276,7 +280,11 @@ const RealBlogs = () => {
         <span className={styles.warning}>
           - For patching files use{' '}
           <span className={styles.highlight}>
-            <a href="https://www.npmjs.com/package/axios" target="_blank">
+            <a
+              href="https://www.npmjs.com/package/axios"
+              target="_blank"
+              rel="noreferrer"
+            >
               axios
             </a>
           </span>
@@ -367,7 +375,7 @@ const RealComments = () => {
         Only comments with <span className={styles.highlight}>
           flag
         </span> of <span className={styles.highlight}>true</span> will be
-        returned in response of a specific blog's comments.
+        returned in response of a specific blog&apos;s comments.
       </CodeTemplate>
       <CodeTemplate
         text={deleteComment}
