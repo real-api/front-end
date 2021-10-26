@@ -256,7 +256,11 @@ const RealBlogs = () => {
         <br />
         <span className={styles.warning}>
           - For posting files use{' '}
-          <span className={styles.highlight}>axios</span>
+          <span className={styles.highlight}>
+            <a href="https://www.npmjs.com/package/axios" target="_blank">
+              axios
+            </a>
+          </span>
         </span>
       </CodeTemplate>
       <CodeTemplate
@@ -271,7 +275,11 @@ const RealBlogs = () => {
         <br />
         <span className={styles.warning}>
           - For patching files use{' '}
-          <span className={styles.highlight}>axios</span>
+          <span className={styles.highlight}>
+            <a href="https://www.npmjs.com/package/axios" target="_blank">
+              axios
+            </a>
+          </span>
         </span>
       </CodeTemplate>
       <CodeTemplate
