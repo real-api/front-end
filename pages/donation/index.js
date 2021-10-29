@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 
 import Layout from '../../common/Layout/Layout';
 
@@ -8,6 +9,11 @@ import styles from './index.module.css';
 const Donation = () => {
   return (
     <Layout>
+      <Head>
+        <title>Donation</title>
+        <meta name="description" content="donate to free real api" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.mainContainer}>
         <div className={styles.container}>
           <Card />

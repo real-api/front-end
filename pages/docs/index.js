@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import Head from 'next/head';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Header from '../../common/Layout/Header/Header';
@@ -69,6 +70,11 @@ const Docs = () => {
 
   return (
     <>
+      <Head>
+        <title>Documentation</title>
+        <meta name="description" content="documentation of free real api" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.mainContainer}>
         <Sidebar />
         <div className={styles.container}>
@@ -229,8 +235,8 @@ const RealBlogs = () => {
         type="GET"
       >
         To get a specific blog add that{' '}
-        <span className={styles.highlight}>blog&apos;s ID</span> as an endpoint to{' '}
-        <span className={styles.highlight}>URL</span>
+        <span className={styles.highlight}>blog&apos;s ID</span> as an endpoint
+        to <span className={styles.highlight}>URL</span>
         <br />
         <span className={styles.warning}>
           - At first it returns an empty array because you should create blogs
