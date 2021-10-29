@@ -127,7 +127,7 @@ const login = [
 
 // Real Blogs ==================================================================
 const getAllBlogs = [
-  `fetch('${BASE_URL}/api/panel/blogs', {
+  `fetch('${BASE_URL}/panel/blogs', {
     headers: {
       'Authorization': 'Bearer <test token>',
     }
@@ -137,7 +137,7 @@ const getAllBlogs = [
 ];
 
 const getBlogById = [
-  `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
+  `fetch('${BASE_URL}/panel/blogs/<blog_id>', {
     headers: {
       'Authorization': 'Bearer <test token>',
     }
@@ -152,7 +152,7 @@ const postBlog = [
   data.append('text', 'test text');
   data.append('image', file);
   data.append('tags', 'one,two,three');
-  axios.post('${BASE_URL}/api/panel/blogs/', data, {
+  axios.post('${BASE_URL}/panel/blogs/', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: 'Bearer <test token>',
@@ -168,7 +168,7 @@ const updateBlog = [
   data.append('text', 'updated text');
   data.append('image', updated file);
   data.append('tags', 'four,five,six');
-  axios.patch('${BASE_URL}/api/panel/blogs/<blog_id>', data, {
+  axios.patch('${BASE_URL}/panel/blogs/<blog_id>', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: 'Bearer <test token>',
@@ -179,7 +179,7 @@ const updateBlog = [
 ];
 
 const deleteBlogById = [
-  `fetch('${BASE_URL}/api/panel/blogs/<blog_id>', {
+  `fetch('${BASE_URL}/panel/blogs/<blog_id>', {
     method: 'DELETE',
     headers: {
       'Authorization': 'Bearer <test token>',
@@ -191,7 +191,7 @@ const deleteBlogById = [
 
 // Real comments ==================================================================
 const getAllComments = [
-  `fetch('${BASE_URL}/api/panel/comments', {
+  `fetch('${BASE_URL}/panel/comments', {
     headers: {
       'Authorization': 'Bearer <test token>',
     }
@@ -201,7 +201,7 @@ const getAllComments = [
 ];
 
 const getBlogComments = [
-  `fetch('${BASE_URL}/api/panel/comments/<blog_id>/blog', {
+  `fetch('${BASE_URL}/panel/comments/<blog_id>/blog', {
     headers: {
       'Authorization': 'Bearer <test token>',
     }
@@ -211,7 +211,7 @@ const getBlogComments = [
 ];
 
 const sendComment = [
-  `fetch('http://localhost:3300/api/panel/comments/<blog_id>',
+  `fetch('http://localhost:3300/panel/comments/<blog_id>',
     {
       method: 'POST',
       headers: {
@@ -228,7 +228,7 @@ const sendComment = [
 ];
 
 const replyComment = [
-  `fetch('http://localhost:3300/api/panel/comments/?parent=<parent_comment_id>',
+  `fetch('http://localhost:3300/panel/comments/?parent=<parent_comment_id>',
     {
       method: 'POST',
       headers: {
@@ -245,7 +245,7 @@ const replyComment = [
 ];
 
 const confirmComment = [
-  `fetch('http://localhost:3300/api/panel/comments/<comment_id>',
+  `fetch('http://localhost:3300/panel/comments/<comment_id>',
     {
       method: 'PATCH',
       headers: {
@@ -259,7 +259,7 @@ const confirmComment = [
 ];
 
 const deleteComment = [
-  `fetch('http://localhost:3300/api/panel/comments/<comment_id>',
+  `fetch('http://localhost:3300/panel/comments/<comment_id>',
     {
       method: 'DELETE',
       headers: {
