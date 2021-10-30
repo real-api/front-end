@@ -16,12 +16,39 @@ const Donation = () => {
       </Head>
       <div className={styles.mainContainer}>
         <div className={styles.container}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card
+            coin="BTC"
+            wallet="bc1q0r27myddepu436xryksw8f7w9wxpwes86tczek"
+          />
+          <Card
+            coin="ETH"
+            wallet="0xb46F561EbDFDaAb3CfF32D7db5F2182fFCBD5250"
+          />
+          <Card coin="XRP" wallet="r9CF3pdPPdf7QgsSpkRN3RXAPo8yeD5Hwu" />
+          <Card
+            coin="BCH"
+            wallet="qp57wvmtl9kr5y33rgcgwzll5a835uk2mu2skqdkar"
+          />
+          <Card
+            coin="BNB"
+            wallet="bnb19dqrlsuhr8tfzv06nsf20gggu7nefmk5g2e942"
+          />
+          <Card
+            coin="LTC"
+            wallet="ltc1qde8ugrue2fspgquf55mfe9095rhalg7aj0646s"
+          />
+          <Card
+            coin="XLM"
+            wallet="GDZCI2EC4KRI6ZFB5SY4RTQA3FPMTMF55IHEAUL52N3FPBMIP7UDC4ED"
+          />
+          <Card
+            coin="TRX"
+            wallet="THjyGq6RoNkBPH4aoXxph9TJ2EHFuz7B4G"
+          />
+          <Card
+            coin="DOGE"
+            wallet="DP8zQxw8jV2vQQgyxw3TjrFp5my9zidWi6"
+          />
         </div>
       </div>
     </Layout>
@@ -30,7 +57,7 @@ const Donation = () => {
 
 export default Donation;
 
-const Card = () => {
+const Card = ({ coin, wallet }) => {
   const [button, setButton] = useState('Copy');
 
   useEffect(() => {
@@ -40,20 +67,20 @@ const Card = () => {
   }, [button]);
 
   const click = () => {
-    navigator.clipboard.writeText('bnb1m4jkycgwhttkzspehl5dcxjgxew7hhfe80627r');
+    navigator.clipboard.writeText(wallet);
     setButton('Copied!');
   };
 
   return (
     <div className={styles.card}>
-      <h3>BNB Wallet</h3>
+      <h3>{coin} Wallet</h3>
       <Image
-        src="/assets/images/bnbwallet.jpg"
-        alt="bnb wallet"
+        src={`/assets/images/${coin}.jfif`}
+        alt={`${coin} wallet`}
         height="200"
         width="200"
       />
-      <p>bnb1m4jkycgwhttkzspehl5dcxjgxew7hhfe80627r</p>
+      <p>{wallet}</p>
       <button onClick={click}>{button}</button>
     </div>
   );
