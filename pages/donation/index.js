@@ -6,6 +6,8 @@ import Layout from '../../common/Layout/Layout';
 
 import styles from './index.module.css';
 
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 const Donation = () => {
   return (
     <Layout>
@@ -41,14 +43,8 @@ const Donation = () => {
             coin="XLM"
             wallet="GDZCI2EC4KRI6ZFB5SY4RTQA3FPMTMF55IHEAUL52N3FPBMIP7UDC4ED"
           />
-          <Card
-            coin="TRX"
-            wallet="THjyGq6RoNkBPH4aoXxph9TJ2EHFuz7B4G"
-          />
-          <Card
-            coin="DOGE"
-            wallet="DP8zQxw8jV2vQQgyxw3TjrFp5my9zidWi6"
-          />
+          <Card coin="TRX" wallet="THjyGq6RoNkBPH4aoXxph9TJ2EHFuz7B4G" />
+          <Card coin="DOGE" wallet="DP8zQxw8jV2vQQgyxw3TjrFp5my9zidWi6" />
         </div>
       </div>
     </Layout>
@@ -58,17 +54,17 @@ const Donation = () => {
 export default Donation;
 
 const Card = ({ coin, wallet }) => {
-  const [button, setButton] = useState('Copy');
+  // const [button, setButton] = useState('Copy');
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setButton('Copy');
+      setCopied(false);
     }, 2000);
-  }, [button]);
+  }, [copied]);
 
   const click = () => {
-    navigator.clipboard.writeText(wallet);
-    setButton('Copied!');
+    setCopied(true);
   };
 
   return (
@@ -81,7 +77,12 @@ const Card = ({ coin, wallet }) => {
         width="200"
       />
       <p>{wallet}</p>
-      <button onClick={click}>{button}</button>
+      <CopyToClipboard text={wallet}>
+        <button onClick={click}>
+          {copied ? 'Copied!' : 'Copy to clipboard'}
+        </button>
+      </CopyToClipboard>
+      {/* <button onClick={click}>{button}</button> */}
     </div>
   );
 };
