@@ -13,10 +13,10 @@ const getAllFakeBlogs = [
 ];
 
 const getFakeBlogById = [
-  `fetch('${BASE_URL}/blogs/613e4f660d6ff89175fb6fa5')
+  `fetch('${BASE_URL}/blogs/61855769a678f4693601cb40')
     .then(res => res.json())
     .then(json => console.log(json))`,
-  `fetch('${BASE_URL}/blogs/613e4f660d6ff89175fb6fa5')
+  `fetch('${BASE_URL}/blogs/61855769a678f4693601cb40')
     .then(res => res.json())`,
 ];
 
@@ -45,10 +45,10 @@ const postFakeBlog = [
 ];
 
 const deleteFakeBlogById = [
-  `fetch('${BASE_URL}/blogs/613e4f660d6ff89175fb6fa5', {method: 'DELETE'})
+  `fetch('${BASE_URL}/blogs/61855769a678f4693601cb40', {method: 'DELETE'})
     .then(res => res.json())
     .then(json => console.log(json))`,
-  `fetch('${BASE_URL}/blogs/613e4f660d6ff89175fb6fa5', {method: 'DELETE'})
+  `fetch('${BASE_URL}/blogs/61855769a678f4693601cb40', {method: 'DELETE'})
     .then(res => res.json())`,
 ];
 
