@@ -62,10 +62,10 @@ const getAllFakeComments = [
 ];
 
 const getFakeCommentById = [
-  `fetch('${BASE_URL}/comments/613e50cb0d6ff89175fb6fce')
+  `fetch('${BASE_URL}/comments/618a862db883dbaafa9449c5')
   .then(res => res.json())
   .then(json => console.log(json))`,
-  `fetch('${BASE_URL}/comments/613e50cb0d6ff89175fb6fce')
+  `fetch('${BASE_URL}/comments/618a862db883dbaafa9449c5')
   .then(res => res.json())`,
 ];
 
@@ -90,10 +90,10 @@ const postFakeComment = [
 ];
 
 const deleteFakeCommentById = [
-  `fetch('${BASE_URL}/comments/613e50cb0d6ff89175fb6fce', {method: 'DELETE'})
+  `fetch('${BASE_URL}/comments/618a862db883dbaafa9449c5', {method: 'DELETE'})
       .then(res => res.json())
       .then(json => console.log(json))`,
-  `fetch('${BASE_URL}/comments/613e50cb0d6ff89175fb6fce', {method: 'DELETE'})
+  `fetch('${BASE_URL}/comments/618a862db883dbaafa9449c5', {method: 'DELETE'})
       .then(res => res.json())`,
 ];
 
