@@ -92,7 +92,7 @@ const Text = () => {
       <p>- Each user can post and save 10 blogs in database.</p>
       <p>- Each user can post 20 comments.1</p>
       <p>- Each user can post 20 requests per minute</p>
-      <p>- Images must be less than 32KB in size.</p>
+      <p>- Images must be less than 150KB in size.</p>
     </section>
   );
 };
